@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Música Para DJs y Packs | Catálogo Oficial</title>
+  <title>Música Para DJs y Packs | Colecciones Exclusivas</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
       padding: 0 20px;
     }
 
-    /* HEADER */
+    /* HEADER & HERO */
     header {
       background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 10, 15, 1) 100%), 
                   radial-gradient(circle at 50% 0%, #1e1b4b 0%, transparent 70%);
@@ -82,7 +82,7 @@
       margin: 0 auto 25px;
     }
 
-    /* SELECTOR PAÍS */
+    /* SELECTOR DINÁMICO DE PAÍS */
     .country-selector-box {
       background: rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(10px);
@@ -121,7 +121,7 @@
       box-shadow: 0 0 12px rgba(255, 0, 127, 0.5);
     }
 
-    /* PROMO BANNER */
+    /* BANNER MEGA PROMO */
     .promo-banner {
       background: linear-gradient(135deg, #ff007f 0%, #7928ca 100%);
       border-radius: 18px;
@@ -181,7 +181,34 @@
       box-shadow: 0 10px 25px rgba(0, 136, 204, 0.55);
     }
 
-    /* CARDS */
+    /* BENEFICIOS */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .feature-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature-item i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .feature-item h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    /* CARDS CATÁLOGO */
     .section-title {
       font-family: 'Oswald', sans-serif;
       font-size: 2rem;
@@ -225,13 +252,18 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .pack-card:hover .pack-img-wrap img {
+      transform: scale(1.04);
     }
 
     .pack-badge {
       position: absolute;
       top: 12px;
       right: 12px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       color: var(--primary);
       border: 1px solid var(--primary);
       padding: 4px 10px;
@@ -317,7 +349,7 @@
       color: #000;
     }
 
-    /* ENLACES Y DEMOS */
+    /* SECCIÓN DE LISTADOS Y DEMOS */
     .links-section {
       background: var(--bg-card);
       border-radius: 16px;
@@ -410,9 +442,9 @@
   <header>
     <div class="container">
       <span class="badge-top">🔥 Colecciones Definitivas para Profesionales</span>
-      <h1 class="hero-title">¡Atención DJs, VJs y Coleccionistas!</h1>
+      <h1 class="hero-title">¡Atención DJs, VJs y Coleccionistas de Música!</h1>
       <p class="hero-subtitle">
-        Todo el material organizado, seleccionado y en máxima calidad profesional (Full HD 1080p, FLAC y 320kbps).
+        ¿Quieres destacar en tus eventos, llenar la pista y ahorrar horas de búsqueda en internet? Todo el material está organizado, seleccionado y en la máxima calidad profesional (Full HD 1080p, FLAC y 320kbps).
       </p>
 
       <!-- SELECTOR DINÁMICO DE PAÍS -->
@@ -440,20 +472,46 @@
     </div>
   </header>
 
-  <!-- CATÁLOGO DE LOS 12 PACKS -->
+  <!-- BENEFICIOS -->
+  <section class="container">
+    <div class="features-grid">
+      <div class="feature-item">
+        <i class="fa-solid fa-compact-disc"></i>
+        <h4>Calidad Garantizada</h4>
+        <p class="text-muted">Audio a 320kbps / FLAC y Video Full HD 1080p.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-bolt"></i>
+        <h4>Descarga Inmediata</h4>
+        <p class="text-muted">Acceso seguro y enlaces con entrega directa a tu e-mail.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-folder-tree"></i>
+        <h4>100% Clasificado</h4>
+        <p class="text-muted">Organizado por carpetas para que encuentres todo en segundos.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-champagne-glasses"></i>
+        <h4>Uso Profesional</h4>
+        <p class="text-muted">Perfecto para bodas, cumpleaños, discotecas, bares o colección.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO DE LOS 12 PACKS CON IMÁGENES REALES DE IMGUR -->
   <main class="container">
-    <h2 class="section-title">📦 Catálogo de Packs</h2>
+    <h2 class="section-title">📦 Catálogo de Colecciones Exclusivas</h2>
     <div class="packs-grid">
 
-      <!-- 1. VIDEOS ACTUALES VOL 1 -->
+      <!-- 1. VIDEOS ACTUALES REMIX VOL 1 -->
       <div class="pack-card">
         <div class="pack-img-wrap">
-          <span class="pack-badge">Full HD</span>
-          <img src="https://i.imgur.com/lWAG8Hp.jpg" alt="Videos Actuales Extended Vol 1" loading="lazy">
+          <span class="pack-badge">Full HD 1080p</span>
+          <img src="https://i.imgur.com/lWAG8Hp.jpg" alt="Videos Actuales Remix Extended Vol 1" loading="lazy">
         </div>
         <div class="pack-info">
           <h3 class="pack-title">Videos Actuales Remix - Extended Vol. 1</h3>
-          <p class="pack-desc">El material más fresco para mezclar en pantallas. 610 videos Full HD 1080p con todos los géneros.</p>
+          <p class="pack-desc">El material más fresco para mezclar en pantallas. 610 videos Full HD (1080p) con todos los géneros musicales en versiones extendidas.</p>
           <div class="pack-meta">
             <span class="meta-tag"><i class="fa-solid fa-video"></i> 610 Videos</span>
             <span class="meta-tag"><i class="fa-solid fa-clock"></i> 35 Horas</span>
@@ -463,19 +521,19 @@
             <span class="single-price-label">Precio individual:</span>
             <span class="single-price-val pack-single-price">$8.000 ARS</span>
           </div>
-          <a href="#" class="btn-pack-buy" data-pack="Videos Actuales Remix Extended Vol 1"><i class="fa-brands fa-whatsapp"></i> Pedir Pack</a>
+          <a href="#" class="btn-pack-buy" data-pack="Videos Actuales Remix Extended Vol 1"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
         </div>
       </div>
 
-      <!-- 2. VIDEOS ACTUALES VOL 2 2026 -->
+      <!-- 2. PACK VIDEOS ACTUALES VOL 2 (2026) -->
       <div class="pack-card">
         <div class="pack-img-wrap">
-          <span class="pack-badge">2026 Hits</span>
-          <img src="https://i.imgur.com/CwuqMIS.jpg" alt="Pack Videos Vol 2 2026" loading="lazy">
+          <span class="pack-badge">Extended 2026</span>
+          <img src="https://i.imgur.com/CwuqMIS.jpg" alt="Pack Videos Actuales Vol 2 2026" loading="lazy">
         </div>
         <div class="pack-info">
           <h3 class="pack-title">Pack Videos Actuales Extended Vol. 2 (2026)</h3>
-          <p class="pack-desc">Éxitos de Bad Bunny, Shakira, Karol G, Bizarrap, Rosalía y Peso Pluma para DJs y VDJs.</p>
+          <p class="pack-desc">Éxitos de Bad Bunny, Shakira, Karol G, Bizarrap, Rosalía, Peso Pluma y más. Especial para DJs y VDJs de pantallas.</p>
           <div class="pack-meta">
             <span class="meta-tag"><i class="fa-solid fa-video"></i> 872 Videos</span>
             <span class="meta-tag"><i class="fa-solid fa-clock"></i> 53 Horas</span>
@@ -485,19 +543,19 @@
             <span class="single-price-label">Precio individual:</span>
             <span class="single-price-val pack-single-price">$8.000 ARS</span>
           </div>
-          <a href="#" class="btn-pack-buy" data-pack="Pack Videos Actuales Extended Vol 2 2026"><i class="fa-brands fa-whatsapp"></i> Pedir Pack</a>
+          <a href="#" class="btn-pack-buy" data-pack="Pack Videos Actuales Extended Vol 2 2026"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
         </div>
       </div>
 
-      <!-- 3. VIDEOS VOL 3 -->
+      <!-- 3. PACK VIDEOS VOL 3 (CANTANTES MÁS ESCUCHADOS) -->
       <div class="pack-card">
         <div class="pack-img-wrap">
-          <span class="pack-badge">Top Artistas</span>
-          <img src="https://i.imgur.com/1pl0Vdb.jpg" alt="Pack Videos Vol 3" loading="lazy">
+          <span class="pack-badge">Top Hits</span>
+          <img src="https://i.imgur.com/1pl0Vdb.jpg" alt="Pack Videos Vol 3 Cantantes Mas Escuchados" loading="lazy">
         </div>
         <div class="pack-info">
           <h3 class="pack-title">Pack Videos Vol. 3 - Cantantes Más Escuchados</h3>
-          <p class="pack-desc">Selección completa con los artistas que lideran reproducciones globales en video Full HD.</p>
+          <p class="pack-desc">Selección completa con los artistas que dominan las listas mundiales y plataformas de streaming en video Full HD.</p>
           <div class="pack-meta">
             <span class="meta-tag"><i class="fa-solid fa-video"></i> 814 Videos</span>
             <span class="meta-tag"><i class="fa-solid fa-clock"></i> 48 Horas</span>
@@ -507,19 +565,19 @@
             <span class="single-price-label">Precio individual:</span>
             <span class="single-price-val pack-single-price">$8.000 ARS</span>
           </div>
-          <a href="#" class="btn-pack-buy" data-pack="Pack Videos Vol 3 Cantantes Mas Escuchados"><i class="fa-brands fa-whatsapp"></i> Pedir Pack</a>
+          <a href="#" class="btn-pack-buy" data-pack="Pack Videos Vol 3 Cantantes Mas Escuchados"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
         </div>
       </div>
 
-      <!-- 4. 80s VIDEOS EXTENDED -->
+      <!-- 4. 80's EXTENDED VIDEOS -->
       <div class="pack-card">
         <div class="pack-img-wrap">
-          <span class="pack-badge">Retro 80s</span>
+          <span class="pack-badge">Joya Retro 80s</span>
           <img src="https://i.imgur.com/jTMjA3M.jpg" alt="80s Extended Videos" loading="lazy">
         </div>
         <div class="pack-info">
           <h3 class="pack-title">80's Extended Videos</h3>
-          <p class="pack-desc">Joya retro única con 1138 videos musicales en Full HD con los mayores íconos de la década.</p>
+          <p class="pack-desc">Una joya retro única con 1138 videos musicales en Full HD con los mayores íconos de la década para coleccionistas exigentes.</p>
           <div class="pack-meta">
             <span class="meta-tag"><i class="fa-solid fa-video"></i> 1138 Videos</span>
             <span class="meta-tag"><i class="fa-solid fa-clock"></i> 86 Horas</span>
@@ -529,40 +587,40 @@
             <span class="single-price-label">Precio individual:</span>
             <span class="single-price-val pack-single-price">$8.000 ARS</span>
           </div>
-          <a href="#" class="btn-pack-buy" data-pack="80s Extended Videos"><i class="fa-brands fa-whatsapp"></i> Pedir Pack</a>
+          <a href="#" class="btn-pack-buy" data-pack="80s Extended Videos"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
         </div>
       </div>
 
-      <!-- 5. 220 MIXES (VIDEOMIXES & MEGAMIX) -->
+      <!-- 5. COLECCIÓN 220 MIXES (VIDEOMIXES & MEGAMIX) -->
       <div class="pack-card">
         <div class="pack-img-wrap">
-          <span class="pack-badge">Megamix</span>
-          <img src="https://i.imgur.com/ycBW4pV.jpg" alt="220 mixes y megamixes" loading="lazy">
+          <span class="pack-badge">Promo 2x1</span>
+          <img src="https://i.imgur.com/ycBW4pV.jpg" alt="Coleccion 220 Videomixes y Megamix" loading="lazy">
         </div>
         <div class="pack-info">
           <h3 class="pack-title">Colección Videomixes & Megamix</h3>
-          <p class="pack-desc">220 Videomixes MP4 (Urbanpop, Dance, Reggaeton Old School, Cumbias) + 220 Megamix MP3 320kbps de regalo.</p>
+          <p class="pack-desc">¡Llévate 220 Videomixes en MP4 (Urbanpop, Dance, Reggaeton Old School, Cumbias) y recibe de REGALO 220 Megamix en Audio MP3 a 320kbps!</p>
           <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> 220 Videos</span>
+            <span class="meta-tag"><i class="fa-solid fa-video"></i> 220 Videomixes</span>
             <span class="meta-tag"><i class="fa-solid fa-music"></i> 220 Megamix MP3</span>
           </div>
           <div class="pack-price-row">
             <span class="single-price-label">Precio individual:</span>
             <span class="single-price-val pack-single-price">$8.000 ARS</span>
           </div>
-          <a href="#" class="btn-pack-buy" data-pack="Coleccion Videomixes y Megamix"><i class="fa-brands fa-whatsapp"></i> Pedir Pack</a>
+          <a href="#" class="btn-pack-buy" data-pack="Coleccion Videomixes y Megamix"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
         </div>
       </div>
 
-      <!-- 6. BALADAS VOL 2 FLAC -->
+      <!-- 6. PACK BALADAS VOL 2 (FLAC COLECCIONISTA) -->
       <div class="pack-card">
         <div class="pack-img-wrap">
           <span class="pack-badge">FLAC Hi-Res</span>
-          <img src="https://i.imgur.com/4NrTTmt.jpg" alt="Baladas Vol 2 FLAC" loading="lazy">
+          <img src="https://i.imgur.com/4NrTTmt.jpg" alt="Pack Baladas Vol 2 FLAC" loading="lazy">
         </div>
         <div class="pack-info">
           <h3 class="pack-title">Pack Baladas Vol. 2 (Edición Coleccionista)</h3>
-          <p class="pack-desc">Audio sin pérdidas en Calidad FLAC. Más de 5,200 baladas en una biblioteca premium.</p>
+          <p class="pack-desc">Máxima fidelidad de audio en Calidad FLAC (Sin pérdidas). Más de 5,200 canciones en una biblioteca premium de 128 GB.</p>
           <div class="pack-meta">
             <span class="meta-tag"><i class="fa-solid fa-music"></i> 5,200+ Temas</span>
             <span class="meta-tag"><i class="fa-solid fa-clock"></i> 348 Horas</span>
@@ -572,24 +630,334 @@
             <span class="single-price-label">Precio individual:</span>
             <span class="single-price-val pack-single-price">$8.000 ARS</span>
           </div>
-          <a href="#" class="btn-pack-buy" data-pack="Pack Baladas Vol 2 FLAC"><i class="fa-brands fa-whatsapp"></i> Pedir Pack</a>
+          <a href="#" class="btn-pack-buy" data-pack="Pack Baladas Vol 2 FLAC Coleccionista"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
         </div>
       </div>
 
-      <!-- 7. BALADAS MP3 & VIDEOS VOL 1 -->
+      <!-- 7. PACK BALADAS MP3 & VIDEOS VOL 1 -->
       <div class="pack-card">
         <div class="pack-img-wrap">
           <span class="pack-badge">MP3 & HD</span>
-          <img src="https://i.imgur.com/c7OYH9J.jpg" alt="Baladas MP3 Vol 1" loading="lazy">
+          <img src="https://i.imgur.com/c7OYH9J.jpg" alt="Pack Baladas MP3 Videos Vol 1" loading="lazy">
         </div>
         <div class="pack-info">
-          <h3 class="pack-title">Pack Baladas Románticas Vol. 1</h3>
-          <p class="pack-desc">Clásicos en español, inglés, lentos 80s/90s/2000s y rancheras en MP3 320kbps y Videos HD.</p>
+          <h3 class="pack-title">Pack Premium de Baladas Románticas Vol. 1</h3>
+          <p class="pack-desc">¡Amor en cada canción! Clásicos en español, inglés, hits de los 80s/90s/2000s y rancheras en MP3 320kbps y Videos HD.</p>
           <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-music"></i> 4,684 Tracks</span>
+            <span class="meta-tag"><i class="fa-solid fa-music"></i> 4,684 Canciones</span>
             <span class="meta-tag"><i class="fa-solid fa-clock"></i> 321 Horas</span>
             <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 39.7 GB</span>
           </div>
           <div class="pack-price-row">
             <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">$8.000 ARS</sp
+            <span class="single-price-val pack-single-price">$8.000 ARS</span>
+          </div>
+          <a href="#" class="btn-pack-buy" data-pack="Pack Baladas Romanticas Vol 1"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 8. EURODANCE 1500 VIDEOS -->
+      <div class="pack-card">
+        <div class="pack-img-wrap">
+          <span class="pack-badge">Eurodance 90s</span>
+          <img src="https://i.imgur.com/B4092IL.jpg" alt="Pack Videos Eurodance 1500 Videos" loading="lazy">
+        </div>
+        <div class="pack-info">
+          <h3 class="pack-title">Pack Videos Eurodance (1500 Videos)</h3>
+          <p class="pack-desc">Lo mejor de los 90's: 2 Unlimited, Culture Beat, Snap!, Corona, Haddaway, DJ Bobo, Ice MC y clásicos de discoteca en MP4.</p>
+          <div class="pack-meta">
+            <span class="meta-tag"><i class="fa-solid fa-video"></i> 1500 Videos</span>
+            <span class="meta-tag"><i class="fa-solid fa-file-video"></i> MP4 Digital</span>
+          </div>
+          <div class="pack-price-row">
+            <span class="single-price-label">Precio individual:</span>
+            <span class="single-price-val pack-single-price">$8.000 ARS</span>
+          </div>
+          <a href="#" class="btn-pack-buy" data-pack="Pack Videos Eurodance 1500 Videos"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 9. PACK K-POP DEFINITIVO -->
+      <div class="pack-card">
+        <div class="pack-img-wrap">
+          <span class="pack-badge">K-Pop Hits</span>
+          <img src="https://i.imgur.com/HuS1bj4.jpg" alt="Pack K-Pop Definitivo" loading="lazy">
+        </div>
+        <div class="pack-info">
+          <h3 class="pack-title">Pack K-Pop Definitivo</h3>
+          <p class="pack-desc">Todos los éxitos más escuchados del momento, boybands y girlbands completas en excelente fidelidad de audio.</p>
+          <div class="pack-meta">
+            <span class="meta-tag"><i class="fa-solid fa-music"></i> 1659 Canciones</span>
+            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 87 Horas</span>
+            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 11.9 GB</span>
+          </div>
+          <div class="pack-price-row">
+            <span class="single-price-label">Precio individual:</span>
+            <span class="single-price-val pack-single-price">$8.000 ARS</span>
+          </div>
+          <a href="#" class="btn-pack-buy" data-pack="Pack K-Pop Definitivo"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 10. POP LATINO ORIGINALES VOL 1 -->
+      <div class="pack-card">
+        <div class="pack-img-wrap">
+          <span class="pack-badge">Pop Latino</span>
+          <img src="https://i.imgur.com/cj2n9Cg.jpg" alt="Pop Latino Originales Vol 1" loading="lazy">
+        </div>
+        <div class="pack-info">
+          <h3 class="pack-title">Pop Latino Originales Vol. 1</h3>
+          <p class="pack-desc">Versiones originales de Karol G, Rauw Alejandro, Rosalía, Bad Bunny, Becky G, Maluma y todos los hits bailables.</p>
+          <div class="pack-meta">
+            <span class="meta-tag"><i class="fa-solid fa-music"></i> 227 Canciones</span>
+            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 15 Horas</span>
+            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 2 GB</span>
+          </div>
+          <div class="pack-price-row">
+            <span class="single-price-label">Precio individual:</span>
+            <span class="single-price-val pack-single-price">$8.000 ARS</span>
+          </div>
+          <a href="#" class="btn-pack-buy" data-pack="Pop Latino Originales Vol 1"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 11. PACK RETRO 70, 80 Y 90 (MALETA VDJ RETRO) -->
+      <div class="pack-card">
+        <div class="pack-img-wrap">
+          <span class="pack-badge">VDJ Retro</span>
+          <img src="https://i.imgur.com/hFiFZO8.jpg" alt="Pack Retro Maleta VDJ" loading="lazy">
+        </div>
+        <div class="pack-info">
+          <h3 class="pack-title">Pack Retro 70, 80 y 90 (Maleta VDJ Retro)</h3>
+          <p class="pack-desc">Especial para video-discos. 600 videos seleccionados (44 GB / 42 horas) para transportar a tu público en el tiempo.</p>
+          <div class="pack-meta">
+            <span class="meta-tag"><i class="fa-solid fa-video"></i> 600 Videos</span>
+            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 42 Horas</span>
+            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 44 GB</span>
+          </div>
+          <div class="pack-price-row">
+            <span class="single-price-label">Precio individual:</span>
+            <span class="single-price-val pack-single-price">$8.000 ARS</span>
+          </div>
+          <a href="#" class="btn-pack-buy" data-pack="Pack Retro 70 80 90 Maleta VDJ"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 12. PACK HARD ROCK & CLÁSICOS -->
+      <div class="pack-card">
+        <div class="pack-img-wrap">
+          <span class="pack-badge">Hard Rock</span>
+          <img src="https://i.imgur.com/kBCBdw6.jpg" alt="Hard Rock Pack" loading="lazy">
+        </div>
+        <div class="pack-info">
+          <h3 class="pack-title">Pack Hard Rock & Clásicos del Rock</h3>
+          <p class="pack-desc">Los himnos del rock en video y audio de alta fidelidad. Solos legendarios y bandas icónicas de la historia para coleccionistas.</p>
+          <div class="pack-meta">
+            <span class="meta-tag"><i class="fa-solid fa-guitar"></i> Rock & Metal</span>
+            <span class="meta-tag"><i class="fa-solid fa-video"></i> Full HD</span>
+          </div>
+          <div class="pack-price-row">
+            <span class="single-price-label">Precio individual:</span>
+            <span class="single-price-val pack-single-price">$8.000 ARS</span>
+          </div>
+          <a href="#" class="btn-pack-buy" data-pack="Pack Hard Rock Clasicos"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- LISTADOS Y DEMOS GOOGLE DRIVE -->
+  <section class="container">
+    <div class="links-section">
+      <!-- 12 LISTADOS OFICIALES -->
+      <h2 style="font-family: 'Oswald'; text-transform: uppercase; margin-bottom: 5px; color: var(--gold);">
+        <i class="fa-solid fa-list-check"></i> Listados Oficiales en PDF / Google Drive
+      </h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Revisa las canciones y videos incluidos en cada pack antes de comprar:</p>
+      
+      <div class="links-grid">
+        <a class="drive-link-card" href="https://drive.google.com/file/d/11FETyif8VmvIXxZ1qnYVgWmDe0gHK6z-/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado K-Pop</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1RbwQMyYvXbFgS-fQgnmOlNJAmvS5ajdz/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Pop Latino Vol. 1</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1s2JQDzyV-O-L7ZPXneNWWZHulIRy9P5B/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Videos Vol. 3</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/19Q4rXweFrnBsiCN93_4OVrDsEhwgjW-P/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Hard Rock</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1vZgaboolZrA3to-KhlySnR46ghYp7OeR/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Videos Vol. 2 (2026)</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1bDdGHS4ukuXjNni8Cw7yuuqLiTUHg3-m/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Videos Vol. 1</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/17E2UuXzNkmlNlao1ehGjUhAUhCXqNDHn/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Baladas Vol. 2 (FLAC)</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/17trD81xYp1-zG9tM5Jqo5GWlt5VRVSKk/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Maleta VDJ Retro</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/16h7o3GTeHlzyIGMqKf9lyLM5lbkv2zt1/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Eurodance 1500 Videos</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1VWo29YRmpHDyKmafVFOAlMGqOXOgHC5d/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Videos 80s</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1F0xXNlMxSfJPS5S1Bb-t51Ja5y7bfB09/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Baladas MP3 & Videos</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1poZVjfCn3EoKf-GfL1Iy48lN3v9Rg1VO/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado 220 Mixes (MP3 & Videos)</span></div>
+          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+      </div>
+
+      <!-- 11 DEMOS DE AUDIO Y VIDEO -->
+      <h2 style="font-family: 'Oswald'; text-transform: uppercase; margin: 35px 0 5px; color: var(--primary);">
+        <i class="fa-solid fa-headphones"></i> Demos de Calidad (Audio y Video)
+      </h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Comprueba la calidad de audio y video directamente en Google Drive:</p>
+
+      <div class="links-grid">
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1oKT7u3WBCmoppJpaHf8oCLBvHQOO8Z-M/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo 220 Mixes (Parte 1)</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1hw932vRPuQ00rsxjQYRUgsJONBnF13Ss/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo 220 Mixes (Parte 2)</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/11upanxcRF-LsXIGqAD6HTTh0LygzXfjK/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Videos Vol. 2 (A)</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1ehP4tBXeVSrqvPLfEXy9nAKotIshLdYY/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Videos Vol. 2 (B)</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/15o3_aLIRPPD4OSafYWZPgdk0KCi1mJkg/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Eurodance Videos #1</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/18twNGI2JmgiyJ75_BcY7oyD_4F17XrxT/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Eurodance Videos #2</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1gOx5lOVRUYXObJcuZEMd-eZDRRqmyP_M/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Eurodance Videos #3</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1kS3SwpvuZRMRR-HtFmpoXllr4oB08If1/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Eurodance Videos #4</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1RSbCkP6khEYVLFe81zGEVAbT4R8ClA3d/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Hard Rock #1</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1HGzl6x1_q1iSTpQNrNmpDinu0bN29MIm/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Hard Rock #2</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+        <a class="drive-link-card" href="https://drive.google.com/file/d/1MiX0-7RPDqjaRc6daknPLerBv7SagCLE/view?usp=drivesdk" target="_blank">
+          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Hard Rock #3</span></div>
+          <span class="btn-ver">Probar</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANAL DE TELEGRAM -->
+  <section class="container" style="text-align: center; margin-bottom: 50px;">
+    <div style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 35px 20px; border-radius: 16px; border: 1px solid var(--border);">
+      <i class="fa-brands fa-telegram" style="font-size: 3rem; color: #0088cc; margin-bottom: 10px;"></i>
+      <h2 style="font-family: 'Oswald'; text-transform: uppercase; margin-bottom: 8px;">Únete a Nuestro Canal de Telegram</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 20px;">
+        Descubre todos los packs disponibles, nuevas actualizaciones, previews exclusivas y catálogo online.
+      </p>
+      <a href="https://t.me/+Q4uOCdc5KNIwYjU5" target="_blank" class="btn-cta btn-telegram">
+        <i class="fa-brands fa-telegram"></i> UNIRME A TELEGRAM
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p style="font-weight: 700; font-size: 1rem; margin-bottom: 5px;">Música Para DJs y Packs</p>
+      <p style="color: var(--text-muted); font-size: 0.85rem;">Entrega digital inmediata a su email • Calidad garantizada 100%</p>
+      <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 10px;">&copy; 2026 Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BOTONES FLOTANTES -->
+  <div class="floating-buttons">
+    <a href="https://t.me/+Q4uOCdc5KNIwYjU5" target="_blank" class="float-btn float-tg" title="Telegram">
+      <i class="fa-brands fa-telegram"></i>
+    </a>
+    <a id="floatWhatsApp" href="https://wa.me/5492613865082" target="_blank" class="float-btn float-wa" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- SCRIPT DINÁMICO DE PAÍSES Y WHATSAPP -->
+  <script>
+    var pricingData = {
+      AR: { country: "Argentina", single: "8000$", promo: "Los 12 Packs por 20.000$" },
+      CL: { country: "Chile", single: "8000$", promo: "Los 12 Packs por 20.000$" },
+      UY: { country: "Uruguay", single: "500 UYU", promo: "Los 12 Packs Premium por 2.000 UYU" },
+      MX: { country: "México", single: "150 PESOS", promo: "Los 12 Packs por 300 PESOS" },
+      CO: { country: "Colombia", single: "$50.000 COP", promo: "Los 12 Packs por $200.000 COP" },
+      US: { country: "Estados Unidos / Internacional", single: "15 USD", promo: "Los 12 Packs por 50 USD" }
+    };
+
+    var WHATSAPP_PHONE = "5492613865082";
+
+    function updatePrices() {
+      var select = document.getElementById('countrySelect');
+      var code = select.value;
+      var data = pricingData[code] || pricingData.AR;
+
+      // Actualizar texto Promo
+      document.getElementById('promoPriceText').innerText = "💥 PROMO DEL DÍA: " + data.promo + " 💥";
+
+      // Actualizar precios de cada pack individual
+      var prices = document.querySelectorAll('.pack-single-price');
+      for (var i = 0; i < prices.length; i++) {
+        prices[i].innerText = data.single;
+      }
+
+      // Actualizar WhatsApp Promo
+      var promoMsg = encodeURIComponent("¡Hola! Quiero aprovechar la SUPER PROMO de " + data.promo + " (" + data.country + "). ¿Cuáles son los medios de pago y acceso inmediato a mi email?");
+      document.getElementById('btnPromoWhatsApp').href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + promoMsg;
+      document.getElementById('floatWhatsApp').href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + promoMsg;
+
+      // Actualizar botones de compra individual
+      var buttons = document.querySelectorAll('.btn-pack-buy');
+      for (var j = 0; j < buttons.length; j++) {
+        var pack = buttons[j].getAttribute('data-pack');
+        var packMsg = encodeURIComponent("¡Hola! Me interesa comprar el pack individual \"" + pack + "\" por " + data.single + " (" + data.country + "). ¿Me pasas los datos para el pago y la entrega inmediata?");
+        buttons[j].href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + packMsg;
+        buttons[j].target = "_blank";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', updatePrices);
+  </script>
+</body>
+</html>
