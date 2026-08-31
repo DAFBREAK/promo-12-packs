@@ -452,6 +452,7 @@
         <label for="countrySelect"><i class="fa-solid fa-earth-americas"></i> SELECCIONA TU PAÍS PARA VER PRECIOS LOCALES:</label>
         <select id="countrySelect" class="country-select" onchange="updatePrices()">
           <option value="AR" selected>🇦🇷 Argentina (ARS)</option>
+          <option value="BO">🇧🇴 Bolivia (BOB - Pago por QR)</option>
           <option value="CL">🇨🇱 Chile (CLP)</option>
           <option value="UY">🇺🇾 Uruguay (UYU)</option>
           <option value="MX">🇲🇽 México (MXN)</option>
@@ -919,6 +920,7 @@
   <script>
     var pricingData = {
       AR: { country: "Argentina", single: "8000$", promo: "Los 12 Packs por 20.000$" },
+      BO: { country: "Bolivia", single: "100 BS", promo: "Los 12 Packs por 300 BS", note: "Pago QR Simple" },
       CL: { country: "Chile", single: "8000$", promo: "Los 12 Packs por 20.000$" },
       UY: { country: "Uruguay", single: "500 UYU", promo: "Los 12 Packs Premium por 2.000 UYU" },
       MX: { country: "México", single: "150 PESOS", promo: "Los 12 Packs por 300 PESOS" },
@@ -942,8 +944,11 @@
         prices[i].innerText = data.single;
       }
 
+      // Detalle de pago (agrega nota si es Bolivia / QR)
+      var paymentHint = (code === 'BO') ? " Quiero pagar por QR." : "";
+
       // Actualizar WhatsApp Promo
-      var promoMsg = encodeURIComponent("¡Hola! Quiero aprovechar la SUPER PROMO de " + data.promo + " (" + data.country + "). ¿Cuáles son los medios de pago y acceso inmediato a mi email?");
+      var promoMsg = encodeURIComponent("¡Hola! Quiero aprovechar la SUPER PROMO de " + data.promo + " (" + data.country + ")." + paymentHint + " ¿Me pasas los datos y acceso inmediato a mi email?");
       document.getElementById('btnPromoWhatsApp').href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + promoMsg;
       document.getElementById('floatWhatsApp').href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + promoMsg;
 
@@ -951,7 +956,7 @@
       var buttons = document.querySelectorAll('.btn-pack-buy');
       for (var j = 0; j < buttons.length; j++) {
         var pack = buttons[j].getAttribute('data-pack');
-        var packMsg = encodeURIComponent("¡Hola! Me interesa comprar el pack individual \"" + pack + "\" por " + data.single + " (" + data.country + "). ¿Me pasas los datos para el pago y la entrega inmediata?");
+        var packMsg = encodeURIComponent("¡Hola! Me interesa comprar el pack individual \"" + pack + "\" por " + data.single + " (" + data.country + ")." + paymentHint + " ¿Me pasas los datos para el pago y la entrega inmediata?");
         buttons[j].href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + packMsg;
         buttons[j].target = "_blank";
       }
