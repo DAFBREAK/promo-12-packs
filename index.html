@@ -166,7 +166,6 @@
       margin-top: 10px;
     }
 
-    /* FILA DE ACCIONES DENTRO DE TARJETAS */
     .card-actions-flex {
       display: flex;
       gap: 8px;
@@ -503,7 +502,7 @@
       color: #e2e8f0;
     }
 
-    /* CARRITO DE COMPRAS FLOTANTE (ACTIVO EN LAS 3 PÁGINAS) */
+    /* CARRITO DE COMPRAS FLOTANTE */
     .cart-drawer-btn {
       position: fixed;
       bottom: 95px;
@@ -1001,7 +1000,9 @@
       </h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Material masterizado en Full HD y máxima fidelidad de audio</p>
 
+      <!-- LOS 12 PACKS COMPLETOS -->
       <div class="dj-grid">
+        <!-- 1. VIDEOS ACTUALES VOL 1 -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Full HD 1080p</span><img src="https://i.imgur.com/lWAG8Hp.jpg" alt="Videos Actuales Remix Vol 1"></div>
           <div class="dj-card-body">
@@ -1016,6 +1017,7 @@
           </div>
         </div>
 
+        <!-- 2. VIDEOS ACTUALES VOL 2 -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Extended 2026</span><img src="https://i.imgur.com/CwuqMIS.jpg" alt="Videos Actuales Vol 2"></div>
           <div class="dj-card-body">
@@ -1030,6 +1032,7 @@
           </div>
         </div>
 
+        <!-- 3. VIDEOS VOL 3 -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Top Hits</span><img src="https://i.imgur.com/1pl0Vdb.jpg" alt="Pack Videos Vol 3"></div>
           <div class="dj-card-body">
@@ -1044,6 +1047,7 @@
           </div>
         </div>
 
+        <!-- 4. 80s EXTENDED -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Joya Retro 80s</span><img src="https://i.imgur.com/jTMjA3M.jpg" alt="80s Extended Videos"></div>
           <div class="dj-card-body">
@@ -1058,6 +1062,7 @@
           </div>
         </div>
 
+        <!-- 5. 220 MIXES -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Promo 2x1</span><img src="https://i.imgur.com/ycBW4pV.jpg" alt="Coleccion 220 Mixes"></div>
           <div class="dj-card-body">
@@ -1072,6 +1077,7 @@
           </div>
         </div>
 
+        <!-- 6. BALADAS VOL 2 FLAC -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">FLAC Hi-Res</span><img src="https://i.imgur.com/4NrTTmt.jpg" alt="Baladas FLAC"></div>
           <div class="dj-card-body">
@@ -1082,6 +1088,96 @@
             <div class="card-actions-flex">
               <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack Baladas Vol 2 FLAC Coleccionista" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
               <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack Baladas Vol 2 FLAC Coleccionista', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. BALADAS ROMÁNTICAS VOL 1 (AGREGADO) -->
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">MP3 & HD</span><img src="https://i.imgur.com/c7OYH9J.jpg" alt="Baladas Vol 1"></div>
+          <div class="dj-card-body">
+            <h3>Pack Premium Baladas Románticas Vol. 1</h3>
+            <p>Clásicos en español e inglés, hits 80s/90s/2000s y rancheras en MP3 y Videos HD.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-music"></i> 4,684 Tracks</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 321 Horas</span><span class="meta-tag-pill"><i class="fa-solid fa-hard-drive"></i> 39.7 GB</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack Baladas Romanticas Vol 1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack Baladas Romanticas Vol 1', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. EURODANCE 1500 VIDEOS (AGREGADO) -->
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">Eurodance 90s</span><img src="https://i.imgur.com/B4092IL.jpg" alt="Eurodance 1500 Videos"></div>
+          <div class="dj-card-body">
+            <h3>Pack Videos Eurodance (1500 Videos)</h3>
+            <p>Lo mejor de los 90s: 2 Unlimited, Culture Beat, Snap!, Corona, Haddaway y DJ Bobo.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-video"></i> 1500 Videos</span><span class="meta-tag-pill"><i class="fa-solid fa-file-video"></i> MP4 Digital</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack Videos Eurodance 1500 Videos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack Videos Eurodance 1500 Videos', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. K-POP DEFINITIVO (AGREGADO) -->
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">K-Pop Hits</span><img src="https://i.imgur.com/HuS1bj4.jpg" alt="Pack K-Pop"></div>
+          <div class="dj-card-body">
+            <h3>Pack K-Pop Definitivo (Audio Máster)</h3>
+            <p>Todos los éxitos más escuchados, boybands y girlbands completas en alta fidelidad.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-music"></i> 1659 Canciones</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 87 Horas</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack K-Pop Definitivo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack K-Pop Definitivo', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. POP LATINO VOL 1 (AGREGADO) -->
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">Pop Latino</span><img src="https://i.imgur.com/cj2n9Cg.jpg" alt="Pop Latino Vol 1"></div>
+          <div class="dj-card-body">
+            <h3>Pop Latino Originales Vol. 1</h3>
+            <p>Versiones originales de Karol G, Rauw Alejandro, Rosalía, Bad Bunny, Becky G y Maluma.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-music"></i> 227 Canciones</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 15 Horas</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pop Latino Originales Vol 1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pop Latino Originales Vol 1', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. MALETA VDJ RETRO (AGREGADO) -->
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">VDJ Retro</span><img src="https://i.imgur.com/hFiFZO8.jpg" alt="Maleta VDJ Retro"></div>
+          <div class="dj-card-body">
+            <h3>Pack Retro 70, 80 y 90 (Maleta VDJ)</h3>
+            <p>Especial para video-discos. 600 videos seleccionados (44 GB / 42 horas) para la pista retro.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-video"></i> 600 Videos</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 42 Horas</span><span class="meta-tag-pill"><i class="fa-solid fa-hard-drive"></i> 44 GB</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack Retro 70 80 90 Maleta VDJ" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack Retro 70 80 90 Maleta VDJ', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. HARD ROCK & CLÁSICOS (AGREGADO) -->
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">Hard Rock</span><img src="https://i.imgur.com/kBCBdw6.jpg" alt="Hard Rock Pack"></div>
+          <div class="dj-card-body">
+            <h3>Pack Hard Rock & Clásicos del Rock</h3>
+            <p>Los himnos del rock en video Full HD y audio máster. Solos legendarios y bandas icónicas.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-guitar"></i> Rock & Metal</span><span class="meta-tag-pill"><i class="fa-solid fa-video"></i> Full HD</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack Hard Rock Clasicos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack Hard Rock Clasicos', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
           </div>
         </div>
@@ -1152,9 +1248,8 @@
 
   <!-- SCRIPT UNIFICADO CON CARRITO GLOBAL -->
   <script>
-    const WHATSAPP_PHONE = "5492613865082";
+    const WHATSAPP_PHONE = "5219831015575";
 
-    // BASE DE DATOS NUMÉRICA Y TEXTUAL PARA CÁLCULO PRECISO EN CARRITO
     const countryMasterData = {
       AR: {
         country: "Argentina", flag: "🇦🇷",
@@ -1315,7 +1410,6 @@
     ];
 
     let currentSelectedCountry = "AR";
-    // El carrito guarda objetos: { titulo: "Nombre", tipo: "balada_single|balada_combo|software|dj_single|dj_promo" }
     let cart = [];
     let currentModalPack = null;
 
@@ -1428,7 +1522,6 @@
       actualizarCarritoUI();
     }
 
-    // RENDERIZAR 7 PACKS NUEVOS DE DJ
     function renderExtraPacks() {
       const container = document.getElementById('newDjPacksContainer');
       if (!container) return;
@@ -1476,7 +1569,7 @@
           <img src="${pack.img}" alt="${pack.title}" style="max-height: 220px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15);">
         </div>
         <h3 style="font-family:'Oswald'; font-size:1.6rem; color:var(--primary-dj); margin-bottom:6px;">${pack.title}</h3>
-        <p style="color:#ffb703; font-weight:800; font-size:1.15rem; margin-bottom:12px;">Precio: ${data.djSingleText}</p>
+        <p style="color:#ffb703; font-weight:800; font-size:1.15rem; margin-bottom:12px;" id="modalPackPrice">Precio: ${data.djSingleText}</p>
         <pre>${pack.fullContent}</pre>
       `;
 
