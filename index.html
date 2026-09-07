@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Música Para DJs y Packs | Colecciones Exclusivas 2026</title>
-  
-  <!-- FUENTES Y ICONOS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Música Para DJs, Colecciones & Software Profesional</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Oswald:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Oswald:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
     :root {
-      --primary: #00f2fe;
-      --secondary: #4facfe;
-      --accent: #ff007f;
-      --gold: #ffb703;
-      --bg-dark: #090a0f;
-      --bg-card: #121520;
-      --text: #ffffff;
-      --text-muted: #a0aec0;
-      --border: rgba(255, 255, 255, 0.12);
-      --neon-glow: 0 0 25px rgba(0, 242, 254, 0.5);
+      --bg-dark: #0a0a0f;
+      --bg-card: rgba(22, 22, 35, 0.85);
+      --gold-primary: #f5c044;
+      --gold-gradient: linear-gradient(135deg, #ffd778 0%, #d49a24 100%);
+      --cyan-brand: #3ecdf4;
+      --accent-pink: #ff007f;
+      --primary-dj: #00f2fe;
+      --text-light: #ffffff;
+      --text-muted: #b5b5c3;
+      --card-border: rgba(245, 192, 68, 0.25);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
 
     body {
       background-color: var(--bg-dark);
-      color: var(--text);
-      font-family: 'Montserrat', sans-serif;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(62, 205, 244, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(245, 192, 68, 0.1) 0%, transparent 45%),
+        linear-gradient(180deg, #07070b 0%, #10101a 100%);
+      color: var(--text-light);
+      min-height: 100vh;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -39,499 +46,434 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 15px 20px 60px;
     }
 
-    /* BARRA SUPERIOR STICKY */
-    .top-nav-bar {
-      background: rgba(10, 12, 18, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 20px;
+    /* BARRA DE NAVEGACIÓN SUPERIOR */
+    .top-menu-bar {
       position: sticky;
       top: 0;
-      z-index: 999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      z-index: 1000;
+      background: #0d101a;
+      border-bottom: 2px solid var(--gold-primary);
+      padding: 12px 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.8);
     }
 
-    .brand-logo {
+    .top-menu-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand-title {
       font-family: 'Oswald', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
-    .btn-nav-more {
-      background: linear-gradient(90deg, #ff007f, #7928ca);
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.85rem;
-      padding: 8px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      text-transform: uppercase;
-      box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+    .menu-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      animation: pulseNav 2s infinite alternate;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 50px;
+      background: #181d2d;
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+      transition: all 0.25s ease;
     }
 
-    @keyframes pulseNav {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
+    .nav-link-btn:hover {
+      background: var(--cyan-brand);
+      color: #000;
+      transform: translateY(-2px);
     }
 
-    /* HEADER & HERO */
-    header {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 10, 15, 1) 100%), 
-                  radial-gradient(circle at 50% 0%, #1e1b4b 0%, transparent 70%);
-      padding: 45px 0 35px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
+    .nav-link-btn.active {
+      background: var(--gold-gradient);
+      color: #000;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 15px rgba(245, 192, 68, 0.4);
     }
 
+    .seccion-contenido {
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ELEMENTOS GLOBALES */
     .badge-top {
       display: inline-block;
-      background: linear-gradient(90deg, #ff007f, #7928ca);
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.9rem;
-      padding: 8px 22px;
+      background: rgba(245, 192, 68, 0.15);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-primary);
+      padding: 6px 18px;
       border-radius: 50px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-      box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
-    }
-
-    h1.hero-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(2.3rem, 6vw, 3.8rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.1;
-      margin-bottom: 15px;
-      background: linear-gradient(90deg, #ffffff 10%, #00f2fe 50%, #ff007f 90%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
-    }
-
-    .hero-subtitle {
-      font-size: 1.08rem;
-      color: var(--text-muted);
-      max-width: 850px;
-      margin: 0 auto 25px;
-    }
-
-    /* SELECTOR DE PAÍS ULTRA LLAMATIVO */
-    .country-selector-box {
-      background: linear-gradient(135deg, rgba(255, 0, 127, 0.25), rgba(0, 242, 254, 0.25));
-      border: 3px solid var(--primary);
-      border-radius: 18px;
-      padding: 24px;
-      max-width: 680px;
-      margin: 0 auto 25px;
-      box-shadow: 0 0 40px rgba(0, 242, 254, 0.6);
-      animation: glowBorder 2.5s infinite alternate;
-      position: relative;
-    }
-
-    @keyframes glowBorder {
-      0% { border-color: var(--primary); box-shadow: 0 0 25px rgba(0, 242, 254, 0.6); }
-      50% { border-color: var(--gold); box-shadow: 0 0 40px rgba(255, 183, 3, 0.8); }
-      100% { border-color: var(--accent); box-shadow: 0 0 30px rgba(255, 0, 127, 0.7); }
-    }
-
-    .country-alert-badge {
-      display: inline-block;
-      background: #ff007f;
-      color: #fff;
       font-size: 0.85rem;
-      font-weight: 900;
-      padding: 5px 16px;
-      border-radius: 20px;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 12px;
-      box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+      margin-bottom: 15px;
     }
 
-    .country-selector-box label {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 12px;
-      font-size: 1.25rem;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-      text-transform: uppercase;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    .badge-top.pink {
+      background: linear-gradient(90deg, #ff007f, #7928ca);
+      border: none;
+      color: #fff;
+    }
+
+    .country-box {
+      background: linear-gradient(135deg, rgba(30, 30, 48, 0.9), rgba(18, 18, 28, 0.9));
+      border: 2px solid var(--gold-primary);
+      border-radius: 16px;
+      padding: 22px;
+      margin: 20px auto 35px;
+      max-width: 650px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .country-select {
       width: 100%;
-      padding: 15px 20px;
-      background: #0d101c;
-      border: 2px solid var(--primary);
-      border-radius: 12px;
+      padding: 13px 18px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      background: #0f0f18;
+      border: 2px solid var(--cyan-brand);
       color: #fff;
-      font-size: 1.15rem;
-      font-weight: 800;
-      cursor: pointer;
+      border-radius: 12px;
       outline: none;
-      transition: 0.3s;
+      cursor: pointer;
+      margin-top: 10px;
     }
 
-    .country-select:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 20px rgba(255, 183, 3, 0.9);
+    /* FILA DE ACCIONES DENTRO DE TARJETAS */
+    .card-actions-flex {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
     }
 
-    /* BOTÓN DIRECTO PARA IR A MÁS PACKS */
-    .jump-to-more-wrap {
-      text-align: center;
-      margin: 20px auto 25px;
-    }
-
-    .btn-jump-more {
-      display: inline-flex;
+    .btn-buy {
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      background: linear-gradient(90deg, #ff007f 0%, #7928ca 50%, #00f2fe 100%);
-      background-size: 200% auto;
-      color: #ffffff;
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      font-weight: 800;
-      padding: 16px 36px;
-      border-radius: 50px;
+      gap: 8px;
+      flex: 1;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
       text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 0 30px rgba(255, 0, 127, 0.6);
-      animation: pulseBtn 2s infinite alternate;
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      transition: transform 0.2s;
-    }
-
-    @keyframes pulseBtn {
-      0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 127, 0.5); }
-      100% { transform: scale(1.04); box-shadow: 0 0 35px rgba(0, 242, 254, 0.8); }
-    }
-
-    .btn-jump-more:hover {
-      transform: scale(1.06);
       color: #fff;
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
 
-    /* BANNER MEGA PROMO */
-    .promo-banner {
-      background: linear-gradient(135deg, #ff007f 0%, #7928ca 100%);
-      border-radius: 18px;
-      padding: 25px;
-      margin: 25px auto;
-      text-align: center;
-      box-shadow: 0 10px 35px rgba(255, 0, 127, 0.4);
+    .btn-buy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+      filter: brightness(1.1);
+    }
+
+    .btn-add-cart-global {
+      background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .promo-banner h2 {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
       color: #fff;
-      text-transform: uppercase;
-      margin-bottom: 5px;
+      padding: 0 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.15rem;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .promo-price-display {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 900;
-      color: var(--gold);
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-      margin: 12px 0;
+    .btn-add-cart-global:hover {
+      background: var(--accent-pink);
+      border-color: var(--accent-pink);
+      transform: translateY(-2px);
     }
 
     .btn-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       background: #25d366;
       color: #fff;
       font-weight: 800;
-      font-size: 1.1rem;
-      padding: 15px 32px;
+      font-size: 1rem;
+      padding: 14px 28px;
       border-radius: 50px;
       text-decoration: none;
       text-transform: uppercase;
       box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
-      transition: all 0.3s ease;
       cursor: pointer;
       border: none;
     }
 
-    .btn-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.55);
-      background: #20ba5a;
+    /* ESTILOS BALADAS */
+    .logo-container { max-width: 260px; margin: 0 auto 15px; }
+    .logo-container img { width: 100%; display: block; }
+
+    .pack-cover-container {
+      max-width: 580px;
+      margin: 20px auto 25px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--gold-primary);
+      box-shadow: 0 10px 35px rgba(245, 192, 68, 0.25);
+    }
+    .pack-cover-container img { width: 100%; display: block; }
+
+    .resource-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
     }
 
-    .btn-telegram {
-      background: #0088cc;
-      box-shadow: 0 6px 20px rgba(0, 136, 204, 0.35);
+    .btn-resource {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #fff;
     }
+    .btn-resource.drive { background: #2b59c3; }
+    .btn-resource.demo { background: #0084ff; }
+    .btn-resource.telegram { background: #0088cc; }
 
-    .btn-telegram:hover {
-      background: #0077b5;
-      box-shadow: 0 10px 25px rgba(0, 136, 204, 0.55);
-    }
-
-    /* BENEFICIOS */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
+      gap: 15px;
+      margin-bottom: 35px;
     }
 
-    .feature-item {
+    .feature-box {
       background: var(--bg-card);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
       padding: 20px;
       text-align: center;
     }
+    .feature-box i { font-size: 2rem; color: var(--gold-primary); margin-bottom: 10px; }
 
-    .feature-item i {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .feature-item h4 {
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    /* TÍTULOS DE SECCIÓN LLAMATIVOS */
-    .section-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(2rem, 4vw, 2.6rem);
-      text-align: center;
-      margin: 50px 0 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, #ffffff, #00f2fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 30px;
-    }
-
-    .packs-grid {
+    .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 35px;
     }
 
     .pack-card {
       background: var(--bg-card);
-      border: 1px solid var(--border);
+      border: 1px solid var(--card-border);
       border-radius: 16px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pack-card.featured {
+      border: 2px solid var(--gold-primary);
+      background: linear-gradient(180deg, rgba(35, 30, 20, 0.95) 0%, rgba(20, 20, 32, 0.95) 100%);
+    }
+
+    .pack-details { list-style: none; margin: 15px 0 20px; }
+    .pack-details li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pack-details li i { color: var(--cyan-brand); }
+
+    .price-box {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+    }
+    .price-box .amount {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--gold-primary);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ESTILOS SOFTWARE */
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .soft-card {
+      background: #131b2e;
+      border-radius: 18px;
+      border: 1px solid #1e293b;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .pack-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-      box-shadow: 0 8px 25px rgba(0, 242, 254, 0.2);
-    }
-
-    .pack-img-wrap {
-      width: 100%;
       position: relative;
-      background: #0f121d;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      cursor: pointer;
     }
 
-    .pack-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .pack-card:hover .pack-img-wrap img {
-      transform: scale(1.05);
-    }
-
-    .img-click-hint {
+    .soft-badge {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
-      color: #fff;
-      padding: 25px 10px 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-align: center;
+      top: 14px;
+      right: 14px;
+      background: #f59e0b;
+      color: #000;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 30px;
+      text-transform: uppercase;
+    }
+
+    .soft-img-wrap {
+      width: 100%;
+      height: 250px;
+      background: #060911;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
+      padding: 12px;
     }
+    .soft-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-    .pack-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(0, 0, 0, 0.85);
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      z-index: 2;
-    }
-
-    .pack-info {
+    .soft-body {
       padding: 20px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
+    .soft-body h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; color: #fff; }
+    .soft-body p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 12px; }
 
-    .pack-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #fff;
-      cursor: pointer;
+    .soft-features { list-style: none; margin-bottom: 15px; }
+    .soft-features li { margin-bottom: 7px; font-size: 0.85rem; color: #cbd5e1; }
+    .soft-features li strong { color: #fff; }
+
+    /* ESTILOS DJS */
+    .promo-banner-dj {
+      background: linear-gradient(135deg, #ff007f 0%, #7928ca 100%);
+      border-radius: 18px;
+      padding: 25px;
+      margin: 25px auto;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(255, 0, 127, 0.4);
     }
 
-    .pack-desc {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 15px;
+    .dj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 25px;
+      margin: 30px 0 45px;
+    }
+
+    .dj-card {
+      background: #121520;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dj-card-img-wrap {
+      width: 100%;
+      aspect-ratio: 1/1;
+      background: #0f121d;
+      position: relative;
+      cursor: pointer;
+    }
+    .dj-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    .dj-card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.85);
+      color: var(--primary-dj);
+      border: 1px solid var(--primary-dj);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .dj-card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
       flex-grow: 1;
     }
+    .dj-card-body h3 { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .dj-card-body p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px; flex-grow: 1; }
 
-    .pack-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 15px;
-    }
-
-    .meta-tag {
+    .dj-meta-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .meta-tag-pill {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
-      padding: 4px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3px 8px;
       border-radius: 5px;
-      font-size: 0.78rem;
-      color: #e2e8f0;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      font-size: 0.75rem;
     }
 
-    .pack-price-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
-
-    .single-price-label { font-size: 0.85rem; color: var(--text-muted); }
-    .single-price-val { font-size: 1.35rem; font-weight: 800; color: var(--gold); }
-
-    .card-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn-pack-buy {
-      flex: 1;
-      background: linear-gradient(90deg, #00f2fe, #4facfe);
-      color: #000;
-      font-weight: 800;
-      font-size: 0.85rem;
-      padding: 12px 8px;
-      border-radius: 8px;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: 0.2s;
-    }
-
-    .btn-pack-buy:hover {
-      background: linear-gradient(90deg, #4facfe, #00f2fe);
-      color: #000;
-    }
-
-    .btn-cart-add {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--border);
-      color: #fff;
-      padding: 0 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: 0.2s;
-    }
-
-    .btn-cart-add:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-
-    /* MODAL DE INFORMACIÓN DETALLADA */
+    /* MODAL */
     .modal-backdrop {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
       z-index: 2000;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 15px;
     }
-
     .modal-backdrop.active { display: flex; }
 
     .modal-content {
       background: #111420;
-      border: 1px solid var(--primary);
+      border: 1px solid var(--primary-dj);
       border-radius: 16px;
       max-width: 750px;
       width: 100%;
@@ -539,1011 +481,982 @@
       overflow-y: auto;
       padding: 25px;
       position: relative;
-      box-shadow: 0 0 35px rgba(0, 242, 254, 0.3);
     }
-
     .modal-close {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 15px; right: 15px;
       background: rgba(255, 255, 255, 0.1);
       border: none;
       color: #fff;
-      width: 35px;
-      height: 35px;
+      width: 35px; height: 35px;
       border-radius: 50%;
       cursor: pointer;
       font-size: 1.1rem;
     }
-
-    .modal-close:hover { background: var(--accent); }
-
-    .modal-body h3 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-
-    .modal-body pre {
+    .modal-content pre {
       white-space: pre-wrap;
       font-family: inherit;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #e2e8f0;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 15px;
+      font-size: 0.92rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 14px;
       border-radius: 10px;
-      border: 1px solid var(--border);
+      color: #e2e8f0;
     }
 
-    /* CARRITO FLOTANTE */
+    /* CARRITO DE COMPRAS FLOTANTE (ACTIVO EN LAS 3 PÁGINAS) */
     .cart-drawer-btn {
       position: fixed;
-      bottom: 85px;
-      right: 20px;
-      background: #ff007f;
+      bottom: 95px;
+      right: 25px;
+      background: var(--accent-pink);
       color: #fff;
       border: none;
-      width: 52px;
-      height: 52px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
-      font-size: 1.3rem;
-      box-shadow: 0 4px 20px rgba(255, 0, 127, 0.5);
+      font-size: 1.35rem;
+      box-shadow: 0 4px 20px rgba(255, 0, 127, 0.55);
       cursor: pointer;
       z-index: 1001;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform 0.25s ease;
     }
+    .cart-drawer-btn:hover { transform: scale(1.1); }
 
     .cart-count {
       position: absolute;
-      top: -4px;
-      right: -4px;
+      top: -4px; right: -4px;
       background: #ffb703;
       color: #000;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 900;
-      width: 22px;
-      height: 22px;
+      width: 24px; height: 24px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      border: 2px solid #0d101a;
     }
 
     .cart-modal {
       position: fixed;
-      bottom: 145px;
-      right: 20px;
-      width: 340px;
-      max-width: 90vw;
+      bottom: 165px;
+      right: 25px;
+      width: 360px;
+      max-width: 92vw;
       background: #121624;
-      border: 1px solid var(--primary);
+      border: 1px solid var(--primary-dj);
       border-radius: 14px;
       padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.9);
       z-index: 1002;
       display: none;
     }
-
     .cart-modal.active { display: block; }
-    .cart-modal-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
-    .cart-items-list { max-height: 200px; overflow-y: auto; margin-bottom: 12px; font-size: 0.85rem; }
-    .cart-item-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); }
-    .cart-item-remove { color: #ff007f; cursor: pointer; margin-left: 8px; }
-
-    /* SECCIÓN DE LISTADOS Y DEMOS */
-    .links-section {
-      background: var(--bg-card);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 30px 20px;
-      margin-bottom: 50px;
-    }
-
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .drive-link-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 10px;
-      padding: 14px;
+    .cart-item-row {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      text-decoration: none;
-      color: #fff;
-      transition: 0.2s;
-    }
-
-    .drive-link-card:hover {
-      background: rgba(0, 242, 254, 0.08);
-      border-color: var(--primary);
-    }
-
-    .drive-link-card .info {
-      display: flex;
       align-items: center;
-      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem;
     }
 
-    .drive-link-card i.drive-icon { font-size: 1.3rem; color: var(--gold); }
-    .drive-link-card .name { font-size: 0.88rem; font-weight: 600; }
-    .drive-link-card .btn-ver {
-      font-size: 0.75rem;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 4px 10px;
-      border-radius: 5px;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0 25px;
-      text-align: center;
-      background: #06070a;
-    }
-
-    .floating-buttons {
+    /* BOTÓN FLOTANTE WHATSAPP */
+    .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
-    }
-
-    .float-btn {
-      width: 52px;
-      height: 52px;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      font-size: 1.6rem;
+      font-size: 32px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
+      z-index: 1000;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     }
 
-    .float-wa { background: #25d366; }
-    .float-tg { background: #0088cc; }
-    .float-more { background: #7928ca; }
+    footer {
+      text-align: center;
+      padding: 35px 0 20px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .top-menu-inner { justify-content: center; }
+      .menu-links { width: 100%; justify-content: center; }
+      .nav-link-btn { font-size: 0.82rem; padding: 8px 14px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- BARRA SUPERIOR DE ACCESO RÁPIDO -->
-  <nav class="top-nav-bar">
-    <div class="brand-logo">
-      <i class="fa-solid fa-compact-disc" style="color:var(--primary);"></i> Música Para DJs
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR CON BOTONES DIRECTOS -->
+  <header class="top-menu-bar">
+    <div class="top-menu-inner">
+      <div class="brand-title">
+        <i class="fa-solid fa-compact-disc" style="color: var(--cyan-brand);"></i> Portal DJs & Software
+      </div>
+      <nav class="menu-links">
+        <button type="button" class="nav-link-btn active" id="btn-nav-baladas" onclick="mostrarSeccion('baladas')">
+          <i class="fa-solid fa-heart"></i> Baladas Románticas
+        </button>
+        <button type="button" class="nav-link-btn" id="btn-nav-software" onclick="mostrarSeccion('software')">
+          <i class="fa-solid fa-laptop-code"></i> Programas y Software
+        </button>
+        <button type="button" class="nav-link-btn" id="btn-nav-djs" onclick="mostrarSeccion('djs')">
+          <i class="fa-solid fa-bolt"></i> Packs DJs y Promos
+        </button>
+      </nav>
     </div>
-    <a href="#mas-packs" class="btn-nav-more">
-      <i class="fa-solid fa-fire"></i> Más Packs Disponibles
-    </a>
-  </nav>
+  </header>
 
-  <!-- BOTÓN FLOTANTE CARRITO -->
-  <button class="cart-drawer-btn" onclick="toggleCartModal()" title="Ver Carrito">
-    <i class="fa-solid fa-cart-shopping"></i>
-    <span class="cart-count" id="cartCount">0</span>
-  </button>
+  <!-- ========================================== -->
+  <!-- SECCIÓN 1: BALADAS ROMÁNTICAS              -->
+  <!-- ========================================== -->
+  <section id="seccion-baladas" class="seccion-contenido" style="display: block;">
+    <div class="container">
+      <div style="text-align: center; padding: 20px 0 10px;">
+        <div class="logo-container">
+          <img src="807381.png" alt="Música Para DJs" onerror="this.src='https://via.placeholder.com/260x100/10101a/3ecdf4?text=M%C3%BAsica+Para+DJs'">
+        </div>
+        <div class="badge-top"><i class="fa-solid fa-crown"></i> Edición Coleccionista</div>
+        <h1 style="font-family: 'Montserrat'; font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pack Baladas Románticas</h1>
+        <p style="color: var(--text-muted); max-width: 750px; margin: 8px auto 20px;">Librería musical de baladas organizada en máxima calidad de audio y video para DJs y coleccionistas.</p>
+        
+        <div class="pack-cover-container">
+          <img src="https://i.ibb.co/wFWb83kd/Business-Suite-creation-989842207454575.jpg" alt="Portada Pack Baladas Románticas">
+        </div>
+      </div>
 
-  <!-- MODAL DEL CARRITO -->
-  <div class="cart-modal" id="cartModal">
-    <div class="cart-modal-title">
-      <span><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</span>
-      <i class="fa-solid fa-xmark" style="cursor:pointer;" onclick="toggleCartModal()"></i>
-    </div>
-    <div class="cart-items-list" id="cartItemsList">
-      <p style="color: var(--text-muted); text-align:center; padding: 10px 0;">Tu carrito está vacío</p>
-    </div>
-    <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800; font-size:0.95rem;">
-      <span>Total:</span>
-      <span style="color:var(--gold);" id="cartTotalPrice">$0</span>
-    </div>
-    <button class="btn-cta" style="width:100%; padding:10px; font-size:0.85rem;" onclick="checkoutCartWhatsApp()">
-      <i class="fa-brands fa-whatsapp"></i> Comprar Carrito por WhatsApp
-    </button>
-  </div>
+      <div class="resource-buttons">
+        <a href="https://drive.google.com/file/d/1F0xXNlMxSfJPS5S1Bb-t51Ja5y7bfB09/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="btn-resource drive"><i class="fa-solid fa-list-check"></i> Ver Catálogo Completo</a>
+        <a href="https://icedrive.net/s/RFGtuxZFQXWwAANRvNSVtRRf1j3V" target="_blank" rel="noopener noreferrer" class="btn-resource demo"><i class="fa-solid fa-headphones"></i> Escuchar Demos FLAC</a>
+        <a href="https://t.me/+Q4uOCdc5KNIwYjU5" target="_blank" rel="noopener noreferrer" class="btn-resource telegram"><i class="fa-brands fa-telegram"></i> Canal de Muestras</a>
+      </div>
 
-  <!-- MODAL DE INFORMACIÓN DETALLADA DEL PACK (AL TOCAR IMAGEN O TÍTULO) -->
-  <div class="modal-backdrop" id="packModal" onclick="closeModalOnBackdrop(event)">
+      <div class="features-grid">
+        <div class="feature-box"><i class="fa-solid fa-music"></i><h4>+5,200 Canciones</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Selección limpia etiquetada por carpetas.</p></div>
+        <div class="feature-box"><i class="fa-solid fa-wave-square"></i><h4>Calidad FLAC & MP3</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Audio sin pérdidas de alta fidelidad.</p></div>
+        <div class="feature-box"><i class="fa-solid fa-video"></i><h4>+400 VideoMixes</h4><p style="font-size: 0.85rem; color: var(--text-muted);">321 horas en videos para pantallas.</p></div>
+        <div class="feature-box"><i class="fa-solid fa-cloud-arrow-down"></i><h4>Acceso de por Vida</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Descarga directa desde Google Drive.</p></div>
+      </div>
+
+      <!-- SELECTOR BALADAS -->
+      <div class="country-box">
+        <label for="select-baladas"><i class="fa-solid fa-earth-americas"></i> SELECCIONA TU PAÍS PARA VER TU MONEDA:</label>
+        <select id="select-baladas" class="country-select" onchange="cambiarPais(this.value)">
+          <option value="AR" selected>🇦🇷 Argentina (ARS)</option>
+          <option value="MX">🇲🇽 México (MXN)</option>
+          <option value="BO">🇧🇴 Bolivia (BOB)</option>
+          <option value="CL">🇨🇱 Chile (CLP)</option>
+          <option value="CO">🇨🇴 Colombia (COP)</option>
+          <option value="US">🇺🇸 Estados Unidos / Internacional (USD)</option>
+          <option value="UY">🇺🇾 Uruguay (UYU)</option>
+          <option value="ES">🇪🇸 España (EUR)</option>
+          <option value="PE">🇵🇪 Perú (PEN)</option>
+        </select>
+        <div id="payment-note-baladas" style="margin-top: 14px; font-size: 0.95rem; color: var(--cyan-brand);"></div>
+      </div>
+
+      <!-- TARJETAS BALADAS -->
+      <div class="pricing-grid">
+        <div class="pack-card">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; text-align: center; margin-bottom: 12px;">Pack 1: Baladas MP3</h3>
+            <ul class="pack-details">
+              <li><i class="fa-solid fa-check"></i> +4,600 Tracks seleccionados</li>
+              <li><i class="fa-solid fa-check"></i> 321 Horas de música</li>
+              <li><i class="fa-solid fa-check"></i> 39.7 GB en MP3 320kbps</li>
+            </ul>
+          </div>
+          <div>
+            <div class="price-box">
+              <div class="currency" id="curr-pack-mp3">PRECIO ARGENTINA</div>
+              <div class="amount" id="price-pack-mp3">$8.000 ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" id="btn-pack-mp3" class="btn-buy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack 1: Baladas MP3', 'balada_single')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pack-card">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; text-align: center; margin-bottom: 12px;">Pack 2: Baladas VIDEOS</h3>
+            <ul class="pack-details">
+              <li><i class="fa-solid fa-check"></i> +400 VideoMixes Baladas</li>
+              <li><i class="fa-solid fa-check"></i> 321 Horas en video</li>
+              <li><i class="fa-solid fa-check"></i> 39.7 GB en Video HD</li>
+            </ul>
+          </div>
+          <div>
+            <div class="price-box">
+              <div class="currency" id="curr-pack-video">PRECIO ARGENTINA</div>
+              <div class="amount" id="price-pack-video">$8.000 ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" id="btn-pack-video" class="btn-buy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack 2: Baladas VIDEOS', 'balada_single')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pack-card">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; text-align: center; margin-bottom: 12px;">Pack 3: Baladas FLAC</h3>
+            <ul class="pack-details">
+              <li><i class="fa-solid fa-check"></i> +5,200 Tracks en FLAC</li>
+              <li><i class="fa-solid fa-check"></i> 348 Horas de puro máster</li>
+              <li><i class="fa-solid fa-check"></i> 128 GB de Alta Fidelidad</li>
+            </ul>
+          </div>
+          <div>
+            <div class="price-box">
+              <div class="currency" id="curr-pack-flac">PRECIO ARGENTINA</div>
+              <div class="amount" id="price-pack-flac">$8.000 ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" id="btn-pack-flac" class="btn-buy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack 3: Baladas FLAC', 'balada_single')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pack-card featured" style="grid-column: 1 / -1;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: center;">
+            <div>
+              <h3 style="font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 5px;">MEGA COMBO: Los 3 Packs (MP3 + VIDEOS + FLAC)</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">Toda la colección junta con descuento especial.</p>
+              <ul class="pack-details">
+                <li><i class="fa-solid fa-circle-check" style="color: var(--gold-primary);"></i> <strong>Pack MP3:</strong> +4600 canciones (39.7 GB)</li>
+                <li><i class="fa-solid fa-circle-check" style="color: var(--gold-primary);"></i> <strong>Pack VIDEOS:</strong> +400 videomixes (39.7 GB)</li>
+                <li><i class="fa-solid fa-circle-check" style="color: var(--gold-primary);"></i> <strong>Pack FLAC:</strong> +5200 canciones (128 GB)</li>
+              </ul>
+            </div>
+            <div>
+              <div class="price-box" style="border-color: var(--gold-primary);">
+                <div class="currency" id="curr-pack-combo">OFERTA ESPECIAL ARGENTINA</div>
+                <div class="amount" id="price-pack-combo" style="font-size: 2.3rem;">$15.000 ARS</div>
+              </div>
+              <div class="card-actions-flex">
+                <a href="#" id="btn-pack-combo" class="btn-buy" style="font-size: 1.05rem; padding: 15px;" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-whatsapp"></i> COMPRAR COMBO
+                </a>
+                <button type="button" class="btn-add-cart-global" style="padding: 0 20px;" onclick="agregarAlCarrito('Mega Combo Baladas (3 Packs)', 'balada_combo')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SECCIÓN 2: PROGRAMAS Y SOFTWARE 2026       -->
+  <!-- ========================================== -->
+  <section id="seccion-software" class="seccion-contenido" style="display: none;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 25px;">
+        <span class="badge-top pink">⚡ Catálogo Oficial 2026</span>
+        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 8px;">Programas & Licencias Digitales</h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 750px; margin: 0 auto;">Elige tu país para ver los precios en tu moneda local y solicita tu programa directo por WhatsApp.</p>
+        
+        <a href="https://t.me/+Q4uOCdc5KNIwYjU5" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: rgba(34, 158, 217, 0.15); border: 1px solid rgba(34, 158, 217, 0.4); padding: 14px 20px; border-radius: 12px; margin: 20px auto; max-width: 650px; text-decoration: none; color: #fff; font-weight: 600;">
+          <span style="font-size: 1.5rem;">✈️</span>
+          <span>¿Buscas más programas? <strong>Únete a nuestro Canal de Telegram</strong> con todo el catálogo disponible 👉</span>
+        </a>
+
+        <!-- SELECTOR SOFTWARE -->
+        <div class="country-box" style="border-color: #38bdf8;">
+          <label for="select-software" style="color: #38bdf8;"><i class="fa-solid fa-earth-americas"></i> SELECCIONA TU PAÍS PARA VER PRECIOS:</label>
+          <select id="select-software" class="country-select" style="border-color: #38bdf8;" onchange="cambiarPais(this.value)">
+            <option value="AR" selected>🇦🇷 Argentina (ARS $)</option>
+            <option value="MX">🇲🇽 México (MXN $)</option>
+            <option value="BO">🇧🇴 Bolivia (BOB Bs)</option>
+            <option value="CL">🇨🇱 Chile (CLP $)</option>
+            <option value="CO">🇨🇴 Colombia (COP $)</option>
+            <option value="US">🇺🇸 Estados Unidos / Internacional (USD $)</option>
+            <option value="UY">🇺🇾 Uruguay (UYU $)</option>
+            <option value="ES">🇪🇸 España (EUR €)</option>
+            <option value="PE">🇵🇪 Perú (PEN S/)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="software-grid">
+        <article class="soft-card">
+          <span class="soft-badge">🔥 Novedad 2026</span>
+          <div class="soft-img-wrap"><img src="https://i.ibb.co/SDcHy3KB/Business-Suite-creation-4392150117664576.jpg" alt="Filmora V15"></div>
+          <div class="soft-body">
+            <h2>Wondershare Filmora 2026 (V15)</h2>
+            <p>Edición de video con Inteligencia Artificial. Rápida, intuitiva y profesional.</p>
+            <ul class="soft-features">
+              <li>🎬 <strong>4K & HDR:</strong> Calidad cinematográfica.</li>
+              <li>🎵 <strong>Efectos IA:</strong> Transiciones y recursos automáticos.</li>
+              <li>💡 <strong>Licencia:</strong> Permanente en Español.</li>
+            </ul>
+            <div style="background: rgba(9, 13, 22, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 10px; text-align: center; margin-top: auto; margin-bottom: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Precio del Software</div>
+              <div class="standard-soft-price" style="font-size: 1.6rem; font-weight: 900; color: #4ade80;">10.000$ ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy soft-btn" data-softname="Wondershare Filmora 2026 (V15)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Wondershare Filmora 2026 (V15)', 'software')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="soft-card">
+          <span class="soft-badge">🎹 Audio & DAW</span>
+          <div class="soft-img-wrap"><img src="https://i.imgur.com/pEKrlOj.png" alt="FL Studio 2026"></div>
+          <div class="soft-body">
+            <h2>FL Studio 2026 Producer Edition</h2>
+            <p>Estación de trabajo para beatmakers y productores. Calidad de estudio.</p>
+            <ul class="soft-features">
+              <li>🎹 <strong>Piano Roll & Mixer:</strong> Hasta 125 pistas de audio.</li>
+              <li>🔌 <strong>Plugins:</strong> Soporte VST / VST3 y controladores MIDI.</li>
+              <li>🎙️ <strong>Edición Vocal:</strong> NewTime y corrección de pitch.</li>
+            </ul>
+            <div style="background: rgba(9, 13, 22, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 10px; text-align: center; margin-top: auto; margin-bottom: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Precio del Software</div>
+              <div class="standard-soft-price" style="font-size: 1.6rem; font-weight: 900; color: #4ade80;">10.000$ ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy soft-btn" data-softname="FL Studio 2026 Full Activado" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('FL Studio 2026 Full Activado', 'software')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="soft-card">
+          <span class="soft-badge">🎨 Diseño Vectorial</span>
+          <div class="soft-img-wrap"><img src="https://i.imgur.com/FfNoRt9.png" alt="Illustrator 2026"></div>
+          <div class="soft-body">
+            <h2>Adobe Illustrator 2026 v30.1</h2>
+            <p>Ilustración vectorial, logotipos, branding y tipografías escalables.</p>
+            <ul class="soft-features">
+              <li>🤖 <strong>Adobe Sensei:</strong> Vectores generativos con IA.</li>
+              <li>📐 <strong>Edición Milimétrica:</strong> Curvas Bézier de precisión.</li>
+              <li>⚡ <strong>GPU Acceleration:</strong> Rendimiento ultra fluido.</li>
+            </ul>
+            <div style="background: rgba(9, 13, 22, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 10px; text-align: center; margin-top: auto; margin-bottom: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Precio del Software</div>
+              <div class="standard-soft-price" style="font-size: 1.6rem; font-weight: 900; color: #4ade80;">10.000$ ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy soft-btn" data-softname="Adobe Illustrator 2026 v30.1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Adobe Illustrator 2026 v30.1', 'software')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="soft-card">
+          <span class="soft-badge">💼 Ofimática Pro</span>
+          <div class="soft-img-wrap"><img src="https://i.imgur.com/eBxPeLL.png" alt="Office 2024"></div>
+          <div class="soft-body">
+            <h2>Microsoft Office 2024 LTSC Pro Plus</h2>
+            <p>Suite completa y permanente sin cuotas mensuales recurrentes.</p>
+            <ul class="soft-features">
+              <li>📝 <strong>Apps:</strong> Word, Excel, PowerPoint, Outlook.</li>
+              <li>📊 <strong>Excel Renovado:</strong> Fórmulas dinámicas modernas.</li>
+              <li>🔒 <strong>Activación:</strong> Permanente oficial en Español.</li>
+            </ul>
+            <div style="background: rgba(9, 13, 22, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 10px; text-align: center; margin-top: auto; margin-bottom: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Precio del Software</div>
+              <div class="standard-soft-price" style="font-size: 1.6rem; font-weight: 900; color: #4ade80;">10.000$ ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy soft-btn" data-softname="Microsoft Office 2024 Pro Plus" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Microsoft Office 2024 Pro Plus', 'software')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="soft-card">
+          <span class="soft-badge">🖨️ Imprenta & Diseño</span>
+          <div class="soft-img-wrap"><img src="https://i.imgur.com/wwnyLt1.png" alt="CorelDRAW 2026"></div>
+          <div class="soft-body">
+            <h2>CorelDRAW 2026 Suite v27.0</h2>
+            <p>Preferida por talleres gráficos, corte láser y sublimación textil.</p>
+            <ul class="soft-features">
+              <li>👕 <strong>Sublimación:</strong> Salida CMYK exacta y corte limpio.</li>
+              <li>🤖 <strong>Máscaras IA:</strong> Recorte instantáneo de fondos.</li>
+              <li>📐 <strong>Tipografía:</strong> Manejo avanzado de fuentes.</li>
+            </ul>
+            <div style="background: rgba(9, 13, 22, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 10px; text-align: center; margin-top: auto; margin-bottom: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Precio del Software</div>
+              <div class="standard-soft-price" style="font-size: 1.6rem; font-weight: 900; color: #4ade80;">10.000$ ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy soft-btn" data-softname="CorelDRAW 2026 Suite v27" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('CorelDRAW 2026 Suite v27', 'software')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="soft-card">
+          <span class="soft-badge">📸 Retoque & Foto</span>
+          <div class="soft-img-wrap"><img src="https://i.imgur.com/LtOEYDw.png" alt="Photoshop 2026"></div>
+          <div class="soft-body">
+            <h2>Adobe Photoshop 2026 v27.1</h2>
+            <p>El estándar de oro para diseño publicitario, retoque y flyers pro.</p>
+            <ul class="soft-features">
+              <li>✨ <strong>Firefly IA:</strong> Relleno generativo inteligente.</li>
+              <li>🖼️ <strong>Fidelidad:</strong> Soporte RAW de 16 bits y HDR.</li>
+              <li>✂️ <strong>Selección:</strong> Detección automática de personas.</li>
+            </ul>
+            <div style="background: rgba(9, 13, 22, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 10px; text-align: center; margin-top: auto; margin-bottom: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Precio del Software</div>
+              <div class="standard-soft-price" style="font-size: 1.6rem; font-weight: 900; color: #4ade80;">10.000$ ARS</div>
+            </div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy soft-btn" data-softname="Adobe Photoshop 2026 v27.1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Adobe Photoshop 2026 v27.1', 'software')" title="Añadir al Carrito"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- SERVICIO ANYDESK -->
+      <div style="margin-top: 40px; background: linear-gradient(135deg, #18131e 0%, #151928 100%); border: 2px solid #ef4444; border-radius: 18px; padding: 25px;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <span style="background: #ef4444; color: #fff; font-weight: 800; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; text-transform: uppercase;">Soporte Especializado</span>
+          <h3 style="font-size: 1.35rem; color: #fff;">🛠️ Instalación Remota vía AnyDesk</h3>
+        </div>
+        <p style="color: #cbd5e1; font-size: 0.95rem;">
+          ¿Prefieres que un técnico lo deje 100% instalado y listo para trabajar? Realizamos la instalación en tu PC vía AnyDesk de forma segura.
+        </p>
+        <div style="background: rgba(9, 13, 22, 0.7); border-left: 4px solid #ef4444; padding: 14px 18px; border-radius: 4px 10px 10px 4px; margin: 16px 0;">
+          <strong>📌 Tarifa:</strong> Mismo valor que el programa elegido:
+          <div style="margin-top: 5px; font-size: 1.15rem; color: #38bdf8;">
+            Costo Instalación: <strong class="standard-soft-price">10.000$ ARS</strong>
+          </div>
+        </div>
+        <a href="#" class="btn-buy" id="btn-soft-anydesk" target="_blank" rel="noopener noreferrer" style="max-width: 420px; margin: 0 auto; background: #ef4444;">
+          🛠️ Solicitar Instalación por AnyDesk
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SECCIÓN 3: PACKS DJS Y PROMOS              -->
+  <!-- ========================================== -->
+  <section id="seccion-djs" class="seccion-contenido" style="display: none;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 25px;">
+        <span class="badge-top pink">🔥 Colecciones Definitivas Para DJs & VJs</span>
+        <h1 style="font-family: 'Oswald'; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ffffff, #00f2fe, #ff007f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Packs DJs & Promos Exclusivas
+        </h1>
+        <p style="color: var(--text-muted); max-width: 850px; margin: 0 auto 20px;">
+          Material seleccionado, clasificado y masterizado en Full HD 1080p, audio a 320kbps y FLAC.
+        </p>
+
+        <!-- SELECTOR DJS -->
+        <div class="country-box" style="border-color: var(--primary-dj);">
+          <label for="select-djs" style="color: var(--primary-dj);"><i class="fa-solid fa-earth-americas"></i> ELIGE TU PAÍS PARA VER TUS PRECIOS LOCALES:</label>
+          <select id="select-djs" class="country-select" style="border-color: var(--primary-dj);" onchange="cambiarPais(this.value)">
+            <option value="AR" selected>🇦🇷 Argentina - 10.000 pesos</option>
+            <option value="MX">🇲🇽 México - 150 pesos</option>
+            <option value="BO">🇧🇴 Bolivia - 100 Bs (Pago QR)</option>
+            <option value="CL">🇨🇱 Chile - 10.000 CLP</option>
+            <option value="CO">🇨🇴 Colombia - 50.000 COP</option>
+            <option value="US">🇺🇸 Estados Unidos - 15 USD</option>
+            <option value="UY">🇺🇾 Uruguay - 500 UYU</option>
+            <option value="ES">🇪🇸 España - 15 euros</option>
+            <option value="PE">🇵🇪 Perú - 50 soles</option>
+          </select>
+        </div>
+
+        <div class="promo-banner-dj">
+          <h2>💥 MEGA PROMO: LOS 12 PACKS COMPLETOS 💥</h2>
+          <div style="font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; color: #ffb703; margin: 10px 0;" id="djPromoPriceText">Los 12 Packs por 20.000 pesos</div>
+          <p style="margin-bottom: 15px; font-weight: 600;">⚡ Entrega Inmediata a su E-mail / Cloud</p>
+          <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+            <a id="btnDjPromoWhatsApp" href="#" target="_blank" rel="noopener noreferrer" class="btn-cta">
+              <i class="fa-brands fa-whatsapp"></i> COMPRAR PROMO 12 PACKS
+            </a>
+            <button type="button" class="btn-add-cart-global" style="background:#7928ca; border-radius:50px; padding:0 24px; font-size:1rem; font-weight:700;" onclick="agregarAlCarrito('Mega Promo 12 Packs DJ Completos', 'dj_promo')">
+              <i class="fa-solid fa-cart-plus"></i> Añadir al Carrito
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-family: 'Oswald'; font-size: 2.2rem; text-align: center; margin: 40px 0 8px; text-transform: uppercase; color: var(--primary-dj);">
+        📦 Catálogo de Colecciones Exclusivas (12 Packs)
+      </h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Material masterizado en Full HD y máxima fidelidad de audio</p>
+
+      <div class="dj-grid">
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">Full HD 1080p</span><img src="https://i.imgur.com/lWAG8Hp.jpg" alt="Videos Actuales Remix Vol 1"></div>
+          <div class="dj-card-body">
+            <h3>Videos Actuales Remix - Extended Vol. 1</h3>
+            <p>610 videos Full HD (1080p) con todos los géneros para pantallas.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-video"></i> 610 Videos</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 35 Horas</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Videos Actuales Remix Extended Vol 1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Videos Actuales Remix Extended Vol 1', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">Extended 2026</span><img src="https://i.imgur.com/CwuqMIS.jpg" alt="Videos Actuales Vol 2"></div>
+          <div class="dj-card-body">
+            <h3>Pack Videos Actuales Extended Vol. 2 (2026)</h3>
+            <p>Éxitos de Bad Bunny, Shakira, Karol G, Peso Pluma y más.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-video"></i> 872 Videos</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 53 Horas</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack Videos Actuales Extended Vol 2 2026" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack Videos Actuales Extended Vol 2 2026', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">Top Hits</span><img src="https://i.imgur.com/1pl0Vdb.jpg" alt="Pack Videos Vol 3"></div>
+          <div class="dj-card-body">
+            <h3>Pack Videos Vol. 3 - Cantantes Más Escuchados</h3>
+            <p>Selección completa con los artistas que dominan las listas en Full HD.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-video"></i> 814 Videos</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 48 Horas</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack Videos Vol 3 Cantantes Mas Escuchados" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack Videos Vol 3 Cantantes Mas Escuchados', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">Joya Retro 80s</span><img src="https://i.imgur.com/jTMjA3M.jpg" alt="80s Extended Videos"></div>
+          <div class="dj-card-body">
+            <h3>80's Extended Videos (Colección Definitiva)</h3>
+            <p>1138 videos musicales en Full HD con los íconos de la década.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-video"></i> 1138 Videos</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 86 Horas</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="80s Extended Videos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('80s Extended Videos', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">Promo 2x1</span><img src="https://i.imgur.com/ycBW4pV.jpg" alt="Coleccion 220 Mixes"></div>
+          <div class="dj-card-body">
+            <h3>Colección Videomixes & Megamix (2x1)</h3>
+            <p>220 Videomixes en MP4 y de regalo 220 Megamix en MP3 a 320kbps.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-video"></i> 220 Videos</span><span class="meta-tag-pill"><i class="fa-solid fa-music"></i> 220 Megamix</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Coleccion Videomixes y Megamix" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Coleccion Videomixes y Megamix', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dj-card">
+          <div class="dj-card-img-wrap"><span class="dj-card-badge">FLAC Hi-Res</span><img src="https://i.imgur.com/4NrTTmt.jpg" alt="Baladas FLAC"></div>
+          <div class="dj-card-body">
+            <h3>Pack Baladas Vol. 2 (Edición Coleccionista)</h3>
+            <p>Audio FLAC sin compresión. Más de 5,200 baladas en 128 GB.</p>
+            <div class="dj-meta-tags"><span class="meta-tag-pill"><i class="fa-solid fa-music"></i> +5,200 Tracks</span><span class="meta-tag-pill"><i class="fa-solid fa-clock"></i> 348 Horas</span></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;"><span style="color:var(--text-muted);">Precio:</span><span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span></div>
+            <div class="card-actions-flex">
+              <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="Pack Baladas Vol 2 FLAC Coleccionista" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Comprar</a>
+              <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('Pack Baladas Vol 2 FLAC Coleccionista', 'dj_single')"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 PACKS ADICIONALES -->
+      <div style="text-align: center; margin: 50px 0 20px;">
+        <span class="badge-top" style="background: linear-gradient(90deg, #00f2fe, #4facfe); color:#000;">⚡ Nuevas Colecciones 2026</span>
+        <h2 style="font-family: 'Oswald'; font-size: 2.2rem; text-transform: uppercase; color: var(--primary-dj); margin-top: 8px;">
+          🔰 Más Packs Disponibles 2026
+        </h2>
+        <p style="color: var(--text-muted);">Haz clic en la imagen o título para ver la lista completa de temas y carpetas.</p>
+      </div>
+
+      <div class="dj-grid" id="newDjPacksContainer"></div>
+    </div>
+  </section>
+
+  <!-- MODAL DE INFORMACIÓN DETALLADA -->
+  <div class="modal-backdrop" id="packModal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closePackModal()"><i class="fa-solid fa-xmark"></i></button>
-      <div class="modal-body" id="modalBody"></div>
+      <button type="button" class="modal-close" onclick="cerrarModalPack()"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalBody"></div>
       <div style="margin-top: 20px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a id="modalBuyWhatsApp" href="#" target="_blank" class="btn-cta" style="flex:1;">
+        <a id="modalBuyWhatsApp" href="#" target="_blank" rel="noopener noreferrer" class="btn-cta" style="flex:1;">
           <i class="fa-brands fa-whatsapp"></i> Comprar Este Pack
         </a>
-        <button id="modalAddToCart" class="btn-cta" style="background:#7928ca;">
+        <button type="button" id="modalAddToCart" class="btn-cta" style="background:#7928ca;">
           <i class="fa-solid fa-cart-plus"></i> Añadir al Carrito
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ENCABEZADO -->
-  <header>
-    <div class="container">
-      <span class="badge-top">🔥 Colecciones Definitivas para Profesionales</span>
-      <h1 class="hero-title">¡Atención DJs, VJs y Coleccionistas de Música!</h1>
-      <p class="hero-subtitle">
-        ¿Quieres destacar en tus eventos, llenar la pista y ahorrar horas de búsqueda en internet? Todo el material está organizado, seleccionado y en la máxima calidad profesional (Full HD 1080p, FLAC y 320kbps).
-      </p>
+  <!-- CARRITO DE COMPRAS FLOTANTE (DISPONIBLE EN LAS 3 PÁGINAS) -->
+  <button type="button" class="cart-drawer-btn" id="cartDrawerBtn" onclick="toggleCartModal()" title="Ver Carrito">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
 
-      <!-- SELECTOR DINÁMICO DE PAÍS ULTRA LLAMATIVO -->
-      <div class="country-selector-box">
-        <span class="country-alert-badge"><i class="fa-solid fa-bolt"></i> ¡Paso 1 Obligatorio!</span>
-        <label for="countrySelect"><i class="fa-solid fa-earth-americas"></i> ELIGE TU PAÍS PARA VER TUS PRECIOS LOCALES:</label>
-        <select id="countrySelect" class="country-select" onchange="updatePrices()">
-          <option value="AR" selected>🇦🇷 Argentina - 10.000 pesos</option>
-          <option value="MX">🇲🇽 México - 150 pesos</option>
-          <option value="CL">🇨🇱 Chile - 10.000 CLP</option>
-          <option value="UY">🇺🇾 Uruguay - 500 UYU</option>
-          <option value="CO">🇨🇴 Colombia - 50.000 COP</option>
-          <option value="US">🇺🇸 Estados Unidos - 15 USD</option>
-          <option value="BO">🇧🇴 Bolivia - 100 Bs (Pago QR)</option>
-          <option value="ES">🇪🇸 España - 15 euros</option>
-          <option value="PE">🇵🇪 Perú - 50 soles</option>
-        </select>
-      </div>
-
-      <!-- BOTÓN DIRECTO PARA IR A MÁS PACKS EN LA MISMA PÁGINA -->
-      <div class="jump-to-more-wrap">
-        <a href="#mas-packs" class="btn-jump-more">
-          <i class="fa-solid fa-fire"></i> VER MÁS PACKS DISPONIBLES 2026 <i class="fa-solid fa-arrow-down"></i>
-        </a>
-      </div>
-
-      <!-- BANNER PROMO COMPLETA -->
-      <div class="promo-banner">
-        <h2>💥 MEGA PROMO: LOS 12 PACKS COMPLETOS 💥</h2>
-        <div class="promo-price-display" id="promoPriceText">Los 12 Packs por 20.000 pesos</div>
-        <p style="margin-bottom: 15px; font-weight: 600;">⚡ Entrega Inmediata a su E-mail / Cloud</p>
-        <a id="btnPromoWhatsApp" href="#" target="_blank" class="btn-cta">
-          <i class="fa-brands fa-whatsapp"></i> COMPRAR PROMO 12 PACKS
-        </a>
-      </div>
+  <div class="cart-modal" id="cartModal">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <strong style="font-size:1.05rem;"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito Multisección</strong>
+      <i class="fa-solid fa-xmark" onclick="toggleCartModal()" style="cursor:pointer; font-size: 1.1rem;"></i>
     </div>
-  </header>
-
-  <!-- BENEFICIOS -->
-  <section class="container">
-    <div class="features-grid">
-      <div class="feature-item">
-        <i class="fa-solid fa-compact-disc"></i>
-        <h4>Calidad Garantizada</h4>
-        <p class="text-muted">Audio a 320kbps / FLAC y Video Full HD 1080p.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fa-solid fa-bolt"></i>
-        <h4>Descarga Inmediata</h4>
-        <p class="text-muted">Acceso seguro y enlaces con entrega directa a tu e-mail.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fa-solid fa-folder-tree"></i>
-        <h4>100% Clasificado</h4>
-        <p class="text-muted">Organizado por carpetas para que encuentres todo en segundos.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fa-solid fa-champagne-glasses"></i>
-        <h4>Uso Profesional</h4>
-        <p class="text-muted">Perfecto para bodas, cumpleaños, discotecas, bares o colección.</p>
-      </div>
+    <div id="cartItemsList" style="max-height: 230px; overflow-y: auto; margin-bottom: 12px;">
+      <p style="color: var(--text-muted); text-align:center; padding: 10px 0;">Tu carrito está vacío</p>
     </div>
-  </section>
-
-  <!-- CATÁLOGO PRINCIPAL (12 PACKS ORIGINALES) -->
-  <main class="container">
-    <h2 class="section-title">📦 Catálogo de Colecciones Exclusivas (12 Packs)</h2>
-    <p class="section-subtitle">Material masterizado en Full HD y máxima calidad de audio</p>
-    
-    <div class="packs-grid">
-
-      <!-- 1. VIDEOS ACTUALES REMIX VOL 1 -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">Full HD 1080p</span>
-          <img src="https://i.imgur.com/lWAG8Hp.jpg" alt="Videos Actuales Remix Extended Vol 1" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Videos Actuales Remix - Extended Vol. 1</h3>
-          <p class="pack-desc">El material más fresco para mezclar en pantallas. 610 videos Full HD (1080p) con todos los géneros musicales en versiones extendidas.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> 610 Videos</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 35 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 70 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Videos Actuales Remix Extended Vol 1"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Videos Actuales Remix Extended Vol 1')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. PACK VIDEOS ACTUALES VOL 2 (2026) -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">Extended 2026</span>
-          <img src="https://i.imgur.com/CwuqMIS.jpg" alt="Pack Videos Actuales Vol 2 2026" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pack Videos Actuales Extended Vol. 2 (2026)</h3>
-          <p class="pack-desc">Éxitos de Bad Bunny, Shakira, Karol G, Bizarrap, Rosalía, Peso Pluma y más. Especial para DJs y VDJs de pantallas.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> 872 Videos</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 53 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 103 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pack Videos Actuales Extended Vol 2 2026"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pack Videos Actuales Extended Vol 2 2026')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. PACK VIDEOS VOL 3 (CANTANTES MÁS ESCUCHADOS) -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">Top Hits</span>
-          <img src="https://i.imgur.com/1pl0Vdb.jpg" alt="Pack Videos Vol 3 Cantantes Mas Escuchados" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pack Videos Vol. 3 - Cantantes Más Escuchados</h3>
-          <p class="pack-desc">Selección completa con los artistas que dominan las listas mundiales y plataformas de streaming en video Full HD.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> 814 Videos</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 48 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 96.6 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pack Videos Vol 3 Cantantes Mas Escuchados"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pack Videos Vol 3 Cantantes Mas Escuchados')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. 80's EXTENDED VIDEOS -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">Joya Retro 80s</span>
-          <img src="https://i.imgur.com/jTMjA3M.jpg" alt="80s Extended Videos" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">80's Extended Videos</h3>
-          <p class="pack-desc">Una joya retro única con 1138 videos musicales en Full HD con los mayores íconos de la década para coleccionistas exigentes.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> 1138 Videos</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 86 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 133 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="80s Extended Videos"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('80s Extended Videos')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. COLECCIÓN 220 MIXES (VIDEOMIXES & MEGAMIX) -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">Promo 2x1</span>
-          <img src="https://i.imgur.com/ycBW4pV.jpg" alt="Coleccion 220 Videomixes y Megamix" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Colección Videomixes & Megamix</h3>
-          <p class="pack-desc">¡Llévate 220 Videomixes en MP4 (Urbanpop, Dance, Reggaeton Old School, Cumbias) y recibe de REGALO 220 Megamix en Audio MP3 a 320kbps!</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> 220 Videomixes</span>
-            <span class="meta-tag"><i class="fa-solid fa-music"></i> 220 Megamix MP3</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Coleccion Videomixes y Megamix"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Coleccion Videomixes y Megamix')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. PACK BALADAS VOL 2 (FLAC COLECCIONISTA) -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">FLAC Hi-Res</span>
-          <img src="https://i.imgur.com/4NrTTmt.jpg" alt="Pack Baladas Vol 2 FLAC" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pack Baladas Vol. 2 (Edición Coleccionista)</h3>
-          <p class="pack-desc">Máxima fidelidad de audio en Calidad FLAC (Sin pérdidas). Más de 5,200 canciones en una biblioteca premium de 128 GB.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-music"></i> 5,200+ Temas</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 348 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 128 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pack Baladas Vol 2 FLAC Coleccionista"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pack Baladas Vol 2 FLAC Coleccionista')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. PACK BALADAS MP3 & VIDEOS VOL 1 -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">MP3 & HD</span>
-          <img src="https://i.imgur.com/c7OYH9J.jpg" alt="Pack Baladas MP3 Videos Vol 1" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pack Premium de Baladas Románticas Vol. 1</h3>
-          <p class="pack-desc">¡Amor en cada canción! Clásicos en español, inglés, hits de los 80s/90s/2000s y rancheras en MP3 320kbps y Videos HD.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-music"></i> 4,684 Canciones</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 321 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 39.7 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pack Baladas Romanticas Vol 1"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pack Baladas Romanticas Vol 1')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. EURODANCE 1500 VIDEOS -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">Eurodance 90s</span>
-          <img src="https://i.imgur.com/B4092IL.jpg" alt="Pack Videos Eurodance 1500 Videos" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pack Videos Eurodance (1500 Videos)</h3>
-          <p class="pack-desc">Lo mejor de los 90's: 2 Unlimited, Culture Beat, Snap!, Corona, Haddaway, DJ Bobo, Ice MC y clásicos de discoteca en MP4.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> 1500 Videos</span>
-            <span class="meta-tag"><i class="fa-solid fa-file-video"></i> MP4 Digital</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pack Videos Eurodance 1500 Videos"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pack Videos Eurodance 1500 Videos')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. PACK K-POP DEFINITIVO -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">K-Pop Hits</span>
-          <img src="https://i.imgur.com/HuS1bj4.jpg" alt="Pack K-Pop Definitivo" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pack K-Pop Definitivo</h3>
-          <p class="pack-desc">Todos los éxitos más escuchados del momento, boybands y girlbands completas en excelente fidelidad de audio.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-music"></i> 1659 Canciones</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 87 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 11.9 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pack K-Pop Definitivo"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pack K-Pop Definitivo')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. POP LATINO ORIGINALES VOL 1 -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">Pop Latino</span>
-          <img src="https://i.imgur.com/cj2n9Cg.jpg" alt="Pop Latino Originales Vol 1" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pop Latino Originales Vol. 1</h3>
-          <p class="pack-desc">Versiones originales de Karol G, Rauw Alejandro, Rosalía, Bad Bunny, Becky G, Maluma y todos los hits bailables.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-music"></i> 227 Canciones</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 15 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 2 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pop Latino Originales Vol 1"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pop Latino Originales Vol 1')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 11. PACK RETRO 70, 80 Y 90 (MALETA VDJ RETRO) -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">VDJ Retro</span>
-          <img src="https://i.imgur.com/hFiFZO8.jpg" alt="Pack Retro Maleta VDJ" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pack Retro 70, 80 y 90 (Maleta VDJ Retro)</h3>
-          <p class="pack-desc">Especial para video-discos. 600 videos seleccionados (44 GB / 42 horas) para transportar a tu público en el tiempo.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> 600 Videos</span>
-            <span class="meta-tag"><i class="fa-solid fa-clock"></i> 42 Horas</span>
-            <span class="meta-tag"><i class="fa-solid fa-hard-drive"></i> 44 GB</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pack Retro 70 80 90 Maleta VDJ"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pack Retro 70 80 90 Maleta VDJ')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12. PACK HARD ROCK & CLÁSICOS -->
-      <div class="pack-card">
-        <div class="pack-img-wrap">
-          <span class="pack-badge">Hard Rock</span>
-          <img src="https://i.imgur.com/kBCBdw6.jpg" alt="Hard Rock Pack" loading="lazy">
-        </div>
-        <div class="pack-info">
-          <h3 class="pack-title">Pack Hard Rock & Clásicos del Rock</h3>
-          <p class="pack-desc">Los himnos del rock en video y audio de alta fidelidad. Solos legendarios y bandas icónicas de la historia para coleccionistas.</p>
-          <div class="pack-meta">
-            <span class="meta-tag"><i class="fa-solid fa-guitar"></i> Rock & Metal</span>
-            <span class="meta-tag"><i class="fa-solid fa-video"></i> Full HD</span>
-          </div>
-          <div class="pack-price-row">
-            <span class="single-price-label">Precio individual:</span>
-            <span class="single-price-val pack-single-price">10.000 pesos</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="btn-pack-buy" data-pack="Pack Hard Rock Clasicos"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <button class="btn-cart-add" onclick="addToCart('Pack Hard Rock Clasicos')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-
+    <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 8px;">
+      <span>Total a Pagar:</span>
+      <span style="color:#ffb703;" id="cartTotalPrice">$0</span>
     </div>
-  </main>
-
-  <!-- ======================================================== -->
-  <!-- SECCIÓN: MÁS PACKS DISPONIBLES (7 PACKS NUEVOS) -->
-  <!-- ======================================================== -->
-  <section class="container" id="mas-packs" style="scroll-margin-top: 70px;">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <span class="badge-top" style="background: linear-gradient(90deg, #00f2fe, #4facfe); color:#000;">⚡ Nuevas Colecciones 2026</span>
-      <h2 class="section-title" style="color: var(--primary); margin-top: 10px;">
-        🔰 Más Packs Disponibles 2026
-      </h2>
-      <p class="section-subtitle">
-        Toca cualquier <strong>imagen o título</strong> para desplegar la información completa, lista de carpetas, temas y tutoriales incluidos.
-      </p>
-    </div>
-    
-    <div class="packs-grid" id="newPacksContainer">
-      <!-- Se inyecta dinámicamente con JavaScript -->
-    </div>
-  </section>
-
-  <!-- LISTADOS Y DEMOS GOOGLE DRIVE -->
-  <section class="container">
-    <div class="links-section">
-      <!-- 12 LISTADOS OFICIALES -->
-      <h2 style="font-family: 'Oswald'; text-transform: uppercase; margin-bottom: 5px; color: var(--gold);">
-        <i class="fa-solid fa-list-check"></i> Listados Oficiales en PDF / Google Drive
-      </h2>
-      <p style="color: var(--text-muted); margin-bottom: 20px;">Revisa las canciones y videos incluidos en cada pack antes de comprar:</p>
-      
-      <div class="links-grid">
-        <a class="drive-link-card" href="https://drive.google.com/file/d/11FETyif8VmvIXxZ1qnYVgWmDe0gHK6z-/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado K-Pop</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1RbwQMyYvXbFgS-fQgnmOlNJAmvS5ajdz/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Pop Latino Vol. 1</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1s2JQDzyV-O-L7ZPXneNWWZHulIRy9P5B/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Videos Vol. 3</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/19Q4rXweFrnBsiCN93_4OVrDsEhwgjW-P/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Hard Rock</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1vZgaboolZrA3to-KhlySnR46ghYp7OeR/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Videos Vol. 2 (2026)</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1bDdGHS4ukuXjNni8Cw7yuuqLiTUHg3-m/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Videos Vol. 1</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/17E2UuXzNkmlNlao1ehGjUhAUhCXqNDHn/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Baladas Vol. 2 (FLAC)</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/17trD81xYp1-zG9tM5Jqo5GWlt5VRVSKk/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Maleta VDJ Retro</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/16h7o3GTeHlzyIGMqKf9lyLM5lbkv2zt1/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Eurodance 1500 Videos</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1VWo29YRmpHDyKmafVFOAlMGqOXOgHC5d/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Videos 80s</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1F0xXNlMxSfJPS5S1Bb-t51Ja5y7bfB09/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado Baladas MP3 & Videos</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1poZVjfCn3EoKf-GfL1Iy48lN3v9Rg1VO/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-file-pdf drive-icon"></i><span class="name">Listado 220 Mixes (MP3 & Videos)</span></div>
-          <span class="btn-ver">Ver <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-      </div>
-
-      <!-- 11 DEMOS DE AUDIO Y VIDEO -->
-      <h2 style="font-family: 'Oswald'; text-transform: uppercase; margin: 35px 0 5px; color: var(--primary);">
-        <i class="fa-solid fa-headphones"></i> Demos de Calidad (Audio y Video)
-      </h2>
-      <p style="color: var(--text-muted); margin-bottom: 20px;">Comprueba la calidad de audio y video directamente en Google Drive:</p>
-
-      <div class="links-grid">
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1oKT7u3WBCmoppJpaHf8oCLBvHQOO8Z-M/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo 220 Mixes (Parte 1)</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1hw932vRPuQ00rsxjQYRUgsJONBnF13Ss/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo 220 Mixes (Parte 2)</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/11upanxcRF-LsXIGqAD6HTTh0LygzXfjK/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Videos Vol. 2 (A)</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1ehP4tBXeVSrqvPLfEXy9nAKotIshLdYY/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Videos Vol. 2 (B)</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/15o3_aLIRPPD4OSafYWZPgdk0KCi1mJkg/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Eurodance Videos #1</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/18twNGI2JmgiyJ75_BcY7oyD_4F17XrxT/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Eurodance Videos #2</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1gOx5lOVRUYXObJcuZEMd-eZDRRqmyP_M/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Eurodance Videos #3</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1kS3SwpvuZRMRR-HtFmpoXllr4oB08If1/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Eurodance Videos #4</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1RSbCkP6khEYVLFe81zGEVAbT4R8ClA3d/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Hard Rock #1</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1HGzl6x1_q1iSTpQNrNmpDinu0bN29MIm/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Hard Rock #2</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-        <a class="drive-link-card" href="https://drive.google.com/file/d/1MiX0-7RPDqjaRc6daknPLerBv7SagCLE/view?usp=drivesdk" target="_blank">
-          <div class="info"><i class="fa-solid fa-play drive-icon"></i><span class="name">Demo Hard Rock #3</span></div>
-          <span class="btn-ver">Probar</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CANAL DE TELEGRAM -->
-  <section class="container" style="text-align: center; margin-bottom: 50px;">
-    <div style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 35px 20px; border-radius: 16px; border: 1px solid var(--border);">
-      <i class="fa-brands fa-telegram" style="font-size: 3rem; color: #0088cc; margin-bottom: 10px;"></i>
-      <h2 style="font-family: 'Oswald'; text-transform: uppercase; margin-bottom: 8px;">Únete a Nuestro Canal de Telegram</h2>
-      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 20px;">
-        Descubre todos los packs disponibles, nuevas actualizaciones, previews exclusivas y catálogo online.
-      </p>
-      <a href="https://t.me/+Q4uOCdc5KNIwYjU5" target="_blank" class="btn-cta btn-telegram">
-        <i class="fa-brands fa-telegram"></i> UNIRME A TELEGRAM
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p style="font-weight: 700; font-size: 1rem; margin-bottom: 5px;">Música Para DJs y Packs</p>
-      <p style="color: var(--text-muted); font-size: 0.85rem;">Entrega digital inmediata a su email • Calidad garantizada 100%</p>
-      <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 10px;">&copy; 2026 Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- BOTONES FLOTANTES -->
-  <div class="floating-buttons">
-    <a href="#mas-packs" class="float-btn float-more" title="Más Packs Disponibles">
-      <i class="fa-solid fa-bolt"></i>
-    </a>
-    <a href="https://t.me/+Q4uOCdc5KNIwYjU5" target="_blank" class="float-btn float-tg" title="Telegram">
-      <i class="fa-brands fa-telegram"></i>
-    </a>
-    <a id="floatWhatsApp" href="https://wa.me/5492613865082" target="_blank" class="float-btn float-wa" title="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <button type="button" class="btn-cta" style="width:100%; padding:11px; font-size:0.9rem;" onclick="checkoutCarritoWhatsApp()">
+      <i class="fa-brands fa-whatsapp"></i> Confirmar Todo por WhatsApp
+    </button>
   </div>
 
-  <!-- JAVASCRIPT DINÁMICO -->
+  <!-- BOTÓN FLOTANTE GENERAL WHATSAPP -->
+  <a href="#" id="floatingWhatsapp" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <p style="font-weight: 700; font-size: 1rem; margin-bottom: 5px;">Música Para DJs & Software Profesional</p>
+    <p style="color: var(--text-muted); font-size: 0.85rem;">Entrega digital inmediata a su email • Calidad garantizada 100%</p>
+    <p style="color: var(--text-muted); font-size: 0.78rem; margin-top: 10px;">&copy; 2026 Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- SCRIPT UNIFICADO CON CARRITO GLOBAL -->
   <script>
-    var pricingData = {
-      MX: { country: "México", singleVal: 150, singleText: "150 pesos", promoText: "Los 12 Packs por 300 pesos" },
-      AR: { country: "Argentina", singleVal: 10000, singleText: "10.000 pesos", promoText: "Los 12 Packs por 20.000 pesos" },
-      CL: { country: "Chile", singleVal: 10000, singleText: "10.000 CLP", promoText: "Los 12 Packs por 20.000 CLP" },
-      UY: { country: "Uruguay", singleVal: 500, singleText: "500 UYU", promoText: "Los 12 Packs por 2.000 UYU" },
-      CO: { country: "Colombia", singleVal: 50000, singleText: "50.000 COP", promoText: "Los 12 Packs por 200.000 COP" },
-      US: { country: "Estados Unidos", singleVal: 15, singleText: "15 USD", promoText: "Los 12 Packs por 50 USD" },
-      BO: { country: "Bolivia", singleVal: 100, singleText: "100 Bs", promoText: "Los 12 Packs por 300 Bs", note: "Pago QR Simple" },
-      ES: { country: "España", singleVal: 15, singleText: "15 euros", promoText: "Los 12 Packs por 50 euros" },
-      PE: { country: "Perú", singleVal: 50, singleText: "50 soles", promoText: "Los 12 Packs por 150 soles" }
+    const WHATSAPP_PHONE = "5492613865082";
+
+    // BASE DE DATOS NUMÉRICA Y TEXTUAL PARA CÁLCULO PRECISO EN CARRITO
+    const countryMasterData = {
+      AR: {
+        country: "Argentina", flag: "🇦🇷",
+        baladas: { mp3: "$8.000 ARS", video: "$8.000 ARS", flac: "$8.000 ARS", combo: "$15.000 ARS", pay: "<i class='fa-solid fa-credit-card'></i> <strong>Medios de pago:</strong> Mercado Pago / Transferencia bancaria" },
+        softText: "$10.000 ARS",
+        djSingleText: "10.000 pesos",
+        djPromoText: "Los 12 Packs por 20.000 pesos",
+        currencySymbol: "$", currencyCode: "ARS",
+        preciosNum: { balada_single: 8000, balada_combo: 15000, software: 10000, dj_single: 10000, dj_promo: 20000 },
+        djPayNote: ""
+      },
+      MX: {
+        country: "México", flag: "🇲🇽",
+        baladas: { mp3: "150 MXN", video: "150 MXN", flac: "150 MXN", combo: "250 MXN", pay: "<i class='fa-solid fa-credit-card'></i> <strong>Medios de pago:</strong> Depósito en OXXO / Transferencia" },
+        softText: "150 MXN",
+        djSingleText: "150 pesos",
+        djPromoText: "Los 12 Packs por 300 pesos",
+        currencySymbol: "$", currencyCode: "MXN",
+        preciosNum: { balada_single: 150, balada_combo: 250, software: 150, dj_single: 150, dj_promo: 300 },
+        djPayNote: ""
+      },
+      BO: {
+        country: "Bolivia", flag: "🇧🇴",
+        baladas: { mp3: "100 Bs", video: "100 Bs", flac: "100 Bs", combo: "200 Bs", pay: "<i class='fa-solid fa-qrcode'></i> <strong>Medios de pago:</strong> Pago por Código QR Simple" },
+        softText: "100 Bs",
+        djSingleText: "100 Bs",
+        djPromoText: "Los 12 Packs por 300 Bs",
+        currencySymbol: "Bs", currencyCode: "BOB",
+        preciosNum: { balada_single: 100, balada_combo: 200, software: 100, dj_single: 100, dj_promo: 300 },
+        djPayNote: "\n📱 *Método preferido:* Pago por QR Simple"
+      },
+      CL: {
+        country: "Chile", flag: "🇨🇱",
+        baladas: { mp3: "8.000 CLP", video: "8.000 CLP", flac: "8.000 CLP", combo: "15.000 CLP", pay: "<i class='fa-solid fa-credit-card'></i> <strong>Medios de pago:</strong> Transferencia bancaria o Cuenta RUT" },
+        softText: "8.000$ CLP",
+        djSingleText: "10.000 CLP",
+        djPromoText: "Los 12 Packs por 20.000 CLP",
+        currencySymbol: "$", currencyCode: "CLP",
+        preciosNum: { balada_single: 8000, balada_combo: 15000, software: 8000, dj_single: 10000, dj_promo: 20000 },
+        djPayNote: ""
+      },
+      CO: {
+        country: "Colombia", flag: "🇨🇴",
+        baladas: { mp3: "80.000 COP", video: "80.000 COP", flac: "80.000 COP", combo: "150.000 COP", pay: "<i class='fa-solid fa-credit-card'></i> <strong>Medios de pago:</strong> Transferencia Bancolombia / Nequi" },
+        softText: "50.000 COP",
+        djSingleText: "50.000 COP",
+        djPromoText: "Los 12 Packs por 200.000 COP",
+        currencySymbol: "$", currencyCode: "COP",
+        preciosNum: { balada_single: 80000, balada_combo: 150000, software: 50000, dj_single: 50000, dj_promo: 200000 },
+        djPayNote: ""
+      },
+      US: {
+        country: "Estados Unidos", flag: "🇺🇸",
+        baladas: { mp3: "15 USD", video: "15 USD", flac: "15 USD", combo: "30 USD", pay: "<i class='fa-brands fa-paypal'></i> <strong>Medios de pago:</strong> PayPal / Transferencia internacional" },
+        softText: "10 USD",
+        djSingleText: "15 USD",
+        djPromoText: "Los 12 Packs por 50 USD",
+        currencySymbol: "$", currencyCode: "USD",
+        preciosNum: { balada_single: 15, balada_combo: 30, software: 10, dj_single: 15, dj_promo: 50 },
+        djPayNote: ""
+      },
+      UY: {
+        country: "Uruguay", flag: "🇺🇾",
+        baladas: { mp3: "700 UYU", video: "700 UYU", flac: "700 UYU", combo: "1.500 UYU", pay: "<i class='fa-solid fa-credit-card'></i> <strong>Medios de pago:</strong> Prex / Transferencia bancaria" },
+        softText: "500 UYU",
+        djSingleText: "500 UYU",
+        djPromoText: "Los 12 Packs por 2.000 UYU",
+        currencySymbol: "$", currencyCode: "UYU",
+        preciosNum: { balada_single: 700, balada_combo: 1500, software: 500, dj_single: 500, dj_promo: 2000 },
+        djPayNote: ""
+      },
+      ES: {
+        country: "España", flag: "🇪🇸",
+        baladas: { mp3: "15 EUR", video: "15 EUR", flac: "15 EUR", combo: "25 EUR", pay: "<i class='fa-brands fa-paypal'></i> <strong>Medios de pago:</strong> PayPal / Bizum / Transferencia" },
+        softText: "10 EUR",
+        djSingleText: "15 euros",
+        djPromoText: "Los 12 Packs por 50 euros",
+        currencySymbol: "€", currencyCode: "EUR",
+        preciosNum: { balada_single: 15, balada_combo: 25, software: 10, dj_single: 15, dj_promo: 50 },
+        djPayNote: ""
+      },
+      PE: {
+        country: "Perú", flag: "🇵🇪",
+        baladas: { mp3: "50 PEN", video: "50 PEN", flac: "50 PEN", combo: "90 PEN", pay: "<i class='fa-solid fa-credit-card'></i> <strong>Medios de pago:</strong> Yape / Plin / Transferencia" },
+        softText: "40 PEN",
+        djSingleText: "50 soles",
+        djPromoText: "Los 12 Packs por 150 soles",
+        currencySymbol: "S/", currencyCode: "PEN",
+        preciosNum: { balada_single: 50, balada_combo: 90, software: 40, dj_single: 50, dj_promo: 150 },
+        djPayNote: ""
+      }
     };
 
-    var WHATSAPP_PHONE = "5492613865082";
-
-    // INFORMACIÓN DETALLADA DE LOS 7 PACKS NUEVOS
-    var extraPacks = [
+    const extraPacks = [
       {
         id: "curso-dj-2026",
         title: "Pack Curso de DJ Desde Cero 2026",
         img: "https://imgur.com/uw0LHQK.jpg",
         badge: "Tutoriales HD",
-        tags: ["Videos Tutoriales", "Virtual DJ 2026", "Rekordbox 7", "FL Studio 25"],
-        desc: "Domina la cabina desde cero: instalación, STEMS en tiempo real, Scratch, técnicas de mezcla y producción musical.",
-        fullContent: `🎧 PACK CURSO DE DJ DESDE CERO 2026 (VIDEOS TUTORIALES) 🎧
-
-Lo que incluye este pack:
-⚡ Fundamentos y Software Esencial
-🎛️ Virtual DJ 2026: Instalación, configuración pro y guía para principiantes.
-🎧 Rekordbox 7 & DJAY: Configuración básica, mapeo y uso optimizado.
-💻 Software de Entrada: Cómo elegir la plataforma ideal según tus metas y equipo.
-
-🔥 Técnica de Mezcla y Funciones Avanzadas
-🔊 Técnicas de Mezcla: Aprende a realizar tu primera mezcla básica con soltura.
-🎚️ Uso de STEMS: Domina la separación de instrumentos y voces en tiempo real.
-🎛️ Introducción al Scratch: Tutorial paso a paso para añadir efectos a tus mezclas.
-🎹 Samples y Música: Cómo importar, organizar tu biblioteca musical y cargar samples en Virtual DJ.
-
-🎚️ Equipamiento y Hardware
-🎧 Controladores al Detalle: Manejo de controladores, guía de uso y reviews avanzadas (DDJ-FLX4 vs. DDJ-FLX10).
-💡 Consejos de Compra: Guía sobre qué equipamiento adquirir antes de gastar dinero.
-
-🎙️ Producción y Estudio (FL Studio & Audio)
-🎚️ FL Studio 25: Guía completa para producción musical y flujos de trabajo.
-🎤 Grabación de Audio: Técnicas para capturar voces e instrumentos con máxima claridad.
-
-🚀 Difusión y Marca Personal
-📺 Subir Sets a YouTube: Evita bloqueos por copyright y optimiza la calidad de tus videos.
-💡 Consejos Clave: 10 recomendaciones indispensables que todo DJ debe aplicar.
-📥 Formato: Videos HD de acceso inmediato.`
+        tags: ["Virtual DJ 2026", "Rekordbox 7", "FL Studio 25"],
+        desc: "Domina la cabina: configuración, STEMS en tiempo real y mezcla fluida.",
+        fullContent: "🎧 PACK CURSO DE DJ DESDE CERO 2026\n\n- Virtual DJ 2026 & Rekordbox 7\n- Mapeo y uso de controladores\n- STEMS y técnicas de mezcla en vivo\n- Producción con FL Studio 25"
       },
       {
         id: "la-nueva-ola-recuerdo",
-        title: "La Nueva Ola • Club del Clan • Clásicos 60s, 70s y Más",
+        title: "La Nueva Ola • Club del Clan • Clásicos 60s y 70s",
         img: "https://imgur.com/By3Lh8a.jpg",
         badge: "+1200 Éxitos",
-        tags: ["Club del Clan", "Románticos 60s/70s", "Baladas de Oro"],
-        desc: "Colección imperdible de más de 1200 éxitos: Sandro, Palito Ortega, Leonardo Favio, Leo Dan, Camilo Sesto y gigantes de la época.",
-        fullContent: `📀 LA NUEVA OLA • CLUB DEL CLAN • CLÁSICOS 60s, 70s Y MÁS
-🎶 ¡COLECCIÓN IMPERDIBLE DE MÁS DE 1200 ÉXITOS! 🎶
-
-Una gran selección para revivir los mejores años de la música romántica, la Nueva Ola y los grandes clásicos latinoamericanos. ❤️🎵
-
-🎤 ARTISTAS DESTACADOS:
-⭐ Palito Ortega • Sandro • Leo Dan • Leonardo Favio • Los Náufragos • Los Gatos • Donald • Johnny Tedesco • Chico Novarro • Violeta Rivas • Jolly Land • Lalo Fransen • Los 4 Soles • Nino Bravo • José Luis Perales • Raphael • Julio Iglesias • Dyango • José José • Emmanuel • Camilo Sesto • Los Iracundos • Los Terrícolas • Los Ángeles Negros • Los Pasteles Verdes • Los Freddy's • Los Yonic's • Los Bukis • Tormenta • Ana Gabriel • Pandora • Lucero y muchos más. 🎙️
-
-💿 INCLUYE GRANDES ÉXITOS COMO:
-❤️ Corazón Contento • La Felicidad • Te He Prometido • Ding Dong • Porque Yo Te Amo • Mi Amigo el Puma • Así • Libre, Solterito y Sin Nadie • Un Beso y Una Flor • Un Velero Llamado Libertad • El Triste • Alma, Corazón y Vida • Piel de Ángel • Vivir Así es Morir de Amor • La Chica de Humo • Bella Señora • El Amor de Mi Vida • Por Aquellos Días de Nuestro Ayer y muchísimos clásicos más. 🎼
-
-🎸 GÉNEROS Y ESTILOS:
-🎙️ Nueva Ola • 💃 Pop Latino • ❤️ Baladas Románticas • 🎶 Música del Club del Clan • 🌹 Boleros y canciones de amor • 🎷 Clásicos de los 60s y 70s • 📻 Grandes éxitos de los 80s y 90s.`
+        tags: ["Club del Clan", "Románticos 60s/70s"],
+        desc: "Colección imperdible con Sandro, Palito Ortega, Leonardo Favio y Leo Dan.",
+        fullContent: "📀 CLÁSICOS DE ORO 60s & 70s\n\nSandro, Palito Ortega, Leo Dan, Leonardo Favio, Camilo Sesto, Los Iracundos y todos los hits del recuerdo latinoamericano."
       },
       {
         id: "previa-boliches-sets-2026",
         title: "Previa, Sets & Boliches 2026",
         img: "https://imgur.com/FQGbuOR.jpg",
         badge: "13 Carpetas DJ",
-        tags: ["+1000 Tracks", "Cachengue Remix", "Fer Palacio", "RKT & House"],
-        desc: "Selección para DJs y boliches: Cachengue Remix 2026, Fer Palacio, Guaracha, RKT, Cumbia Vieja y House Party.",
-        fullContent: `🔥 PREVIA, SETS & BOLICHES 2026 🔥
-🎧 +1000 ÉXITOS • 13 CARPETAS • SELECCIÓN PARA DJ
-
-Un pack pensado para DJs, fiestas, previas y boliches, con una selección variada para mantener la pista activa.
-
-📂 CONTENIDO — 13 CARPETAS:
-🪩 1. Cachengue Remix 2026 (Bolicheros y remixes para romper la pista)
-🎧 2. Fer Palacio 2026 (Los mejores remixes de cachengue)
-🎶 3. Fiesta Cumbia Vieja (Cumbia clásica infaltable)
-🥁 4. Guaracha 2026 (Lo más nuevo + previa argentina)
-🎛️ 5. House Party 2026 (Dance • EDM • Club Hits)
-🌴 6. Mix Lo Nuevo 2026 (Mix de verano • Previa)
-💃 7. Música para Bailar en Fiestas (Salsa • Merengue • Bachata)
-🎉 8. Party Hits & Klassiker 2026 (Throwback Classics)
-🍻 9. Previa 2026 (Ideal para arrancar la noche)
-🇦🇷 10. Previa 2026 AR – Actualizada (Música actual argentina)
-🔥 11. Previa 2026 – Lo Más Escuchado (Lo que más suena)
-🎤 12. Previa RKT & Perreo 2026 (Lo más nuevo de RKT y perreo)
-🪩 13. Previa & Cachengue 2026 – Fer Palacio (Mixes de fiesta)`
+        tags: ["Cachengue Remix", "Fer Palacio", "RKT & House"],
+        desc: "Selección para DJs: Cachengue Remix 2026, Fer Palacio, Guaracha y RKT.",
+        fullContent: "🔥 PREVIA, SETS & BOLICHES 2026\n\nCachengue, RKT, Cumbia Clásica, Fer Palacio Remixes y House Party para la noche."
       },
       {
         id: "latinos-hits-fiesta-bailar",
         title: "Latinos Hits Fiesta – Para Bailar",
         img: "https://imgur.com/nwqhiUH.jpg",
         badge: "15 Colecciones",
-        tags: ["80s & 90s", "Top Hits 2026", "Bailables Retro", "Bachata & Pop"],
-        desc: "Clásicos latinos, éxitos retro y hits 2026 para no parar de bailar: Shakira, Luis Miguel, Ricky Martin, Chayanne, Maná y más.",
-        fullContent: `🔥 LATINOS HITS FIESTA – PARA BAILAR 💃🕺
-🎶 15 colecciones cuidadosamente seleccionadas para fiestas y eventos.
-
-📂 CONTENIDO:
-📀 Éxitos Latinos 80’s & 90’s • 🎵 Éxitos Latinos de Siempre • 🔥 Fiesta Latina 2026 • 💃 Hits Latinos • ❤️ Hits Latinos Bachata • 🕺 Kitsch Retro Latinos • 🎉 Latinos Bailables Retro • 🎶 Latinos Clásicos Fiesta • 🔥 Latinos de Fiesta 2026 • 💿 Latinos Movido Retro • 📀 Latinos Retro • 🎧 Latinos Retro 172 pistas • 💥 Hits 90s/2000 • 🎉 Modo Fiesta Bailables • 🎵 Románticos Latinos.
-
-⭐ ARTISTAS DESTACADOS:
-Shakira • Luis Miguel • Ricky Martin • Maná • Alejandro Sanz • Chayanne • Thalía • Marcela Morelo • Carlos Vives • Maluma • Manuel Turizo • Romeo Santos • Enrique Iglesias • Yandel • Ozuna • TINI • Becky G • Rosalía • Soda Stereo • Los Prisioneros • Juan Luis Guerra • Gloria Estefan • Marc Anthony.`
+        tags: ["80s & 90s", "Top Hits 2026"],
+        desc: "Éxitos retro y hits 2026: Shakira, Luis Miguel, Ricky Martin, Chayanne.",
+        fullContent: "💃 LATINOS HITS FIESTA\n\n15 carpetas con los clásicos y temas actuales bailables para cumpleaños y eventos."
       },
       {
         id: "pack-greatest-hits-premium",
         title: "Pack Greatest Hits – Colección Premium",
         img: "https://imgur.com/ofOewR3.jpg",
         badge: "+1500 Temas",
-        tags: ["Sin Relleno", "70s 80s 90s 00s", "Pop Rock Britpop", "Samples"],
-        desc: "Más de 1.500 himnos universales por décadas y géneros. Clásicos indiscutidos de Elvis, George Michael, MTV Rock y Party Hits.",
-        fullContent: `🔥 PACK GREATEST HITS – COLECCIÓN PREMIUM 🔥
-🎧 Más de 1.500 éxitos seleccionados sin relleno.
-
-📂 INCLUYE 15 COLECCIONES EXCLUSIVAS:
-1. 🎶 00s HITS – 100 Greatest Songs of the 2000s
-2. 🕺 70s HITS – 100 Greatest Songs of the 1970s
-3. 🎸 80s HITS – 100 Greatest Songs of the 1980s
-4. 🔥 90s HITS – 100 Greatest Songs of the 1990s
-5. 🍽️ 100 Greatest Dinner Party Songs
-6. 🚗 100 Greatest Driving Songs
-7. ⭐ 100 Greatest Pop Hits 2026
-8. 👑 Elvis Presley – Greatest Hits
-9. 🎤 George Michael – Greatest Hits
-10. 💿 Golden Oldies – Clásicos 50s, 60s y 70s
-11. 🌎 Greatest Hits Ever – Mayores éxitos de todos los tiempos
-12. 🇬🇧 MTV 90s – Top 40 Britpop Singles
-13. 🎸 MTV 2000s Rock Greatest Hits
-14. 🎬 The Greatest Showman – Soundtrack
-15. 🎛️ World's Greatest Samples (Sonidos icónicos)`
+        tags: ["70s 80s 90s 00s", "Pop Rock"],
+        desc: "Más de 1.500 himnos universales por décadas sin temas de relleno.",
+        fullContent: "⭐ PACK GREATEST HITS\n\n100 Greatest Hits de cada década (70s, 80s, 90s, 2000s), Rock Clásico y Britpop."
       },
       {
         id: "pack-fiestero-2026",
         title: "Pack Fiesteros 2026 (Remix & Extended)",
         img: "https://imgur.com/DwHtoUr.jpg",
         badge: "+3000 Tracks",
-        tags: ["23 Carpetas", "Extended & Remix", "Cuarteto", "Cumbia Sonidera"],
-        desc: "23 carpetas masivas: Afro House 2026, Cuarteto Puro, Cumbias Sonideras, Fer Palacio Remixes, Pachangueo y Mix Pop Rock.",
-        fullContent: `🔥 PACK FIESTEROS 2026 (REMIX, MIXES, ENGANCHADOS Y EXTENDED) 🔥
-¡Más de 3000 tracks en 23 carpetas súper organizadas para DJs!
-
-📁 CARPETAS DESTACADAS:
-🔥 2026 Mix Fiestero / DE TODO UN POCO (Bad Bunny, Peso Pluma, Fuerza Regida)
-🎷 Afro House 2026 (Adam Port, HUGEL, Zerb)
-🍻 BALLERMANN HITS 2026 (Mallorca Party)
-🪗 CUARTETO PURO 2026 & MIX CUARTETO TOP 50 (DesaKta2, Ulises Bueno, Q' Lokura)
-🇲🇽 CUMBIA SONIDERA, PERUANA & BOLIVIANA 2026 (Grupo Kual?, Los Ángeles Azules)
-🎛️ Cumbia Mix 2026 & REMIX FIESTEROS (Dj Pirata, Fer Palacio, Tomy DJ)
-🔊 Cumbias Sonideras 2026 Mix Éxitos (Jaime Lopez, Grupo Frontera)
-🎧 FER PALACIO 2026 (Los Mejores Remix Cachengue)
-🥳 FIESTA 2026 & FIESTA INFANTIL 2026
-💃 Fiesta Latina & LATINOS DE FIESTA 2026 (Karol G, Feid, Bad Gyal)
-🎛️ House Party 2026 (Rampa, Rivo Remix, TECH IT DEEP)
-🎹 MIX CUMBIESERO Y ENGANCHADOS (Corazón Serrano, Ráfaga)
-🎸 Mix Pop Rock 2026 (Aitana, Sebastian Yatra, Juanes)
-💃 PACHANGUEO 2026 (Lola Indigo, J Balvin, Don Omar)`
+        tags: ["23 Carpetas", "Cuarteto", "Cumbia"],
+        desc: "23 carpetas masivas: Afro House 2026, Cuarteto Puro y Cumbias Sonideras.",
+        fullContent: "🎛️ PACK FIESTEROS 2026\n\n+3000 temas en versiones extendidas, remix y enganchados seleccionados."
       },
       {
         id: "cumbias-sonideras-2026",
         title: "Pack Definitivo: Cumbias Sonideras 2026",
         img: "https://imgur.com/3XXoZtk.jpg",
         badge: "Wepa & Sonidero",
-        tags: ["Calidad Pro", "100% Organizado", "Los Ángeles Azules", "Raymix"],
-        desc: "¡El ambiente sonidero directo a tus bocinas! Los Ángeles Azules, Celso Piña, Raymix, Grupo Kual?, Los Askis, Condor Wepa y más.",
-        fullContent: `🪗🔥 PACK DEFINITIVO: CUMBIAS SONIDERAS 2026 🔥🪘
-¡Lleva el ambiente del verdadero baile sonidero directamente a tus bocinas!
-
-👑 ARTISTAS INCLUIDOS:
-✨ Los Ángeles Azules • Raymix • Celso Piña • Los Askis • Grupo Cañaveral • Grupo Kual? • Los Mirlos • Alberto Pedraza • y todo el movimiento Sonidero / Wepa!
-
-🎶 LOS HITS MÁS SONADOS DEL PACK:
-🔥 17 Años • Cómo Te Voy A Olvidar • Oye Mujer
-🔥 El Listón De Tu Pelo • Cumbia sobre el Río • Cumbia Buena
-🔥 Tiene Espinas El Rosal • El Sonidon • Cumbia del Chavito Medio Metro
-🔥 Nunca Es Suficiente • La Chona • Condor Wepa
-🔥 Vienes y Te Vas • Yo Soy Tu Maestro • Amor De Tres
-… ¡y decenas de clasicazos, éxitos virales y remezclas sonideras!
-
-✅ Calidad Profesional: Audio nítido, sin cortes ni distorsión.
-✅ Ahorra Tiempo: Lista 100% organizada.
-✅ Entrega Inmediata a tu email o celular.`
+        tags: ["Los Ángeles Azules", "Raymix"],
+        desc: "El ambiente sonidero directo a tus parlantes con audio nítido sin distorsión.",
+        fullContent: "🪗 CUMBIAS SONIDERAS 2026\n\nLos Ángeles Azules, Raymix, Celso Piña, Grupo Kual? y lo mejor del movimiento Wepa."
       }
     ];
 
-    var cart = [];
+    let currentSelectedCountry = "AR";
+    // El carrito guarda objetos: { titulo: "Nombre", tipo: "balada_single|balada_combo|software|dj_single|dj_promo" }
+    let cart = [];
+    let currentModalPack = null;
 
-    // RENDERIZAR PACKS NUEVOS EN LA SECCIÓN
+    function mostrarSeccion(id) {
+      document.getElementById('seccion-baladas').style.display = (id === 'baladas') ? 'block' : 'none';
+      document.getElementById('seccion-software').style.display = (id === 'software') ? 'block' : 'none';
+      document.getElementById('seccion-djs').style.display = (id === 'djs') ? 'block' : 'none';
+
+      document.getElementById('btn-nav-baladas').classList.toggle('active', id === 'baladas');
+      document.getElementById('btn-nav-software').classList.toggle('active', id === 'software');
+      document.getElementById('btn-nav-djs').classList.toggle('active', id === 'djs');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function cambiarPais(val) {
+      if (!countryMasterData[val]) return;
+      currentSelectedCountry = val;
+
+      const sBaladas = document.getElementById('select-baladas');
+      const sSoftware = document.getElementById('select-software');
+      const sDjs = document.getElementById('select-djs');
+
+      if (sBaladas) sBaladas.value = val;
+      if (sSoftware) sSoftware.value = val;
+      if (sDjs) sDjs.value = val;
+
+      actualizarPrecios();
+    }
+
+    function actualizarPrecios() {
+      const data = countryMasterData[currentSelectedCountry] || countryMasterData.AR;
+
+      // 1. BALADAS
+      const pMp3 = document.getElementById('price-pack-mp3');
+      const pVid = document.getElementById('price-pack-video');
+      const pFlac = document.getElementById('price-pack-flac');
+      const pCombo = document.getElementById('price-pack-combo');
+      if (pMp3) pMp3.textContent = data.baladas.mp3;
+      if (pVid) pVid.textContent = data.baladas.video;
+      if (pFlac) pFlac.textContent = data.baladas.flac;
+      if (pCombo) pCombo.textContent = data.baladas.combo;
+
+      const cMp3 = document.getElementById('curr-pack-mp3');
+      const cVid = document.getElementById('curr-pack-video');
+      const cFlac = document.getElementById('curr-pack-flac');
+      const cCombo = document.getElementById('curr-pack-combo');
+      if (cMp3) cMp3.textContent = "PRECIO " + data.country.toUpperCase();
+      if (cVid) cVid.textContent = "PRECIO " + data.country.toUpperCase();
+      if (cFlac) cFlac.textContent = "PRECIO " + data.country.toUpperCase();
+      if (cCombo) cCombo.textContent = "OFERTA ESPECIAL " + data.country.toUpperCase();
+
+      const pNote = document.getElementById('payment-note-baladas');
+      if (pNote) pNote.innerHTML = data.baladas.pay;
+
+      const bMp3 = document.getElementById('btn-pack-mp3');
+      const bVid = document.getElementById('btn-pack-video');
+      const bFlac = document.getElementById('btn-pack-flac');
+      const bCombo = document.getElementById('btn-pack-combo');
+      if (bMp3) bMp3.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("¡Hola! Me interesa comprar el *Pack Baladas MP3* (" + data.baladas.mp3 + ") desde *" + data.country + "*. ¿Me envías los medios de pago?");
+      if (bVid) bVid.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("¡Hola! Me interesa comprar el *Pack Baladas VIDEOS* (" + data.baladas.video + ") desde *" + data.country + "*. ¿Me envías los medios de pago?");
+      if (bFlac) bFlac.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("¡Hola! Me interesa comprar el *Pack Baladas FLAC* (" + data.baladas.flac + ") desde *" + data.country + "*. ¿Me envías los medios de pago?");
+      if (bCombo) bCombo.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("¡Hola! Me interesa la *OFERTA MEGA COMBO Baladas* (" + data.baladas.combo + ") desde *" + data.country + "*. ¿Me indicas cómo abonar?");
+
+      // 2. SOFTWARE
+      const softPrices = document.querySelectorAll('.standard-soft-price');
+      softPrices.forEach(el => el.textContent = data.softText);
+
+      const softBtns = document.querySelectorAll('.soft-btn');
+      softBtns.forEach(btn => {
+        const sName = btn.getAttribute('data-softname') || "Software";
+        btn.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("¡Hola! 👋 Me interesa comprar *" + sName + "*.\n\n📍 País: " + data.country + " " + data.flag + "\n💰 Precio: " + data.softText + "\n\n¿Cuáles son los métodos de pago disponibles?");
+      });
+
+      const bAny = document.getElementById('btn-soft-anydesk');
+      if (bAny) bAny.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("¡Hola! 🛠️ Necesito el *Servicio de Instalación Remota vía AnyDesk*.\n\n📍 País: " + data.country + " " + data.flag + "\n💰 Tarifa: " + data.softText + "\n\nQuisiera coordinar horarios y medios de pago.");
+
+      // 3. PACKS DJS
+      const djPromo = document.getElementById('djPromoPriceText');
+      if (djPromo) djPromo.innerText = "💥 " + data.djPromoText + " 💥";
+
+      const singlePrices = document.querySelectorAll('.single-dj-price');
+      singlePrices.forEach(el => el.innerText = data.djSingleText);
+
+      const bDjPromo = document.getElementById('btnDjPromoWhatsApp');
+      if (bDjPromo) {
+        bDjPromo.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("🎧 *¡HOLA! QUIERO ADQUIRIR LA MEGA PROMO DJ* 🔥\n\n📀 *Detalle:* Los 12 Packs Completos\n🌎 *País:* " + data.country + "\n💵 *Total:* " + data.djPromoText + (data.djPayNote || "") + "\n⚡ *Entrega:* Inmediata a mi email\n\n¿Me facilitas los medios de pago? Gracias.");
+      }
+
+      const djBuyBtns = document.querySelectorAll('.btn-dj-pack-buy');
+      djBuyBtns.forEach(btn => {
+        const packName = btn.getAttribute('data-pack') || "Pack DJ";
+        btn.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("🎛️ *¡HOLA! QUIERO COMPRAR UN PACK DJ* 🎶\n\n📀 *Pack:* *" + packName + "*\n🌎 *País:* " + data.country + "\n💵 *Precio:* *" + data.djSingleText + "*" + (data.djPayNote || "") + "\n⚡ *Entrega:* Descarga directa / Inmediata\n\n¿Me indicas cómo abonar?");
+      });
+
+      // MODAL SI ESTÁ ABIERTO
+      if (currentModalPack) {
+        const mBuy = document.getElementById('modalBuyWhatsApp');
+        if (mBuy) {
+          mBuy.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("🎛️ *¡HOLA! ME INTERESA UN PACK DJ* 🎶\n\n📀 *Pack:* *" + currentModalPack.title + "*\n🌎 *País:* " + data.country + "\n💵 *Precio:* *" + data.djSingleText + "*" + (data.djPayNote || "") + "\n\n¿Cuáles son las formas de pago disponibles?");
+        }
+      }
+
+      // BOTÓN FLOTANTE GENERAL
+      const fWa = document.getElementById('floatingWhatsapp');
+      if (fWa) {
+        fWa.href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("¡Hola! Me comunico desde *" + data.country + "* para consultar por los packs y programas disponibles.");
+      }
+
+      actualizarCarritoUI();
+    }
+
+    // RENDERIZAR 7 PACKS NUEVOS DE DJ
     function renderExtraPacks() {
-      var container = document.getElementById('newPacksContainer');
-      var html = '';
-      extraPacks.forEach(function(p) {
-        var tagsHtml = p.tags.map(function(t) { return '<span class="meta-tag"><i class="fa-solid fa-check"></i> ' + t + '</span>'; }).join('');
+      const container = document.getElementById('newDjPacksContainer');
+      if (!container) return;
+
+      let html = '';
+      extraPacks.forEach(p => {
+        const tags = p.tags.map(t => `<span class="meta-tag-pill"><i class="fa-solid fa-check"></i> ${t}</span>`).join('');
         html += `
-          <div class="pack-card">
-            <div class="pack-img-wrap" onclick="openPackModal('${p.id}')">
-              <span class="pack-badge">${p.badge}</span>
+          <div class="dj-card">
+            <div class="dj-card-img-wrap" onclick="abrirModalPack('${p.id}')">
+              <span class="dj-card-badge">${p.badge}</span>
               <img src="${p.img}" alt="${p.title}" loading="lazy">
-              <div class="img-click-hint"><i class="fa-solid fa-circle-info"></i> Toca para ver info completa</div>
             </div>
-            <div class="pack-info">
-              <h3 class="pack-title" onclick="openPackModal('${p.id}')">${p.title}</h3>
-              <p class="pack-desc">${p.desc}</p>
-              <div class="pack-meta">${tagsHtml}</div>
-              <div class="pack-price-row">
-                <span class="single-price-label">Precio individual:</span>
-                <span class="single-price-val pack-single-price">10.000 pesos</span>
+            <div class="dj-card-body">
+              <h3 onclick="abrirModalPack('${p.id}')" style="cursor:pointer;">${p.title}</h3>
+              <p>${p.desc}</p>
+              <div class="dj-meta-tags">${tags}</div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800;">
+                <span style="color:var(--text-muted);">Precio:</span>
+                <span class="single-dj-price" style="color: #ffb703; font-size: 1.25rem;">10.000 pesos</span>
               </div>
-              <div class="card-actions">
-                <a href="#" class="btn-pack-buy" data-pack="${p.title}"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                <button class="btn-cart-add" onclick="addToCart('${p.title}')" title="Agregar al carrito"><i class="fa-solid fa-cart-plus"></i></button>
+              <div class="card-actions-flex">
+                <a href="#" class="btn-buy btn-dj-pack-buy" data-pack="${p.title}" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-whatsapp"></i> Comprar
+                </a>
+                <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('${p.title}', 'dj_single')" title="Añadir al Carrito">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -1552,200 +1465,155 @@ Shakira • Luis Miguel • Ricky Martin • Maná • Alejandro Sanz • Chayan
       container.innerHTML = html;
     }
 
-    // MODAL DE DETALLES
-    var currentModalPack = null;
-    function openPackModal(packId) {
-      var pack = extraPacks.find(function(p) { return p.id === packId; });
+    function abrirModalPack(packId) {
+      const pack = extraPacks.find(p => p.id === packId);
       if (!pack) return;
       currentModalPack = pack;
+      const data = countryMasterData[currentSelectedCountry] || countryMasterData.AR;
 
-      var countryCode = document.getElementById('countrySelect').value;
-      var data = pricingData[countryCode] || pricingData.AR;
-
-      var bodyHtml = `
-        <div style="text-align:center; margin-bottom: 15px;">
-          <img src="${pack.img}" alt="${pack.title}" style="max-height: 250px; border-radius: 10px; border: 1px solid var(--border);">
+      document.getElementById('modalBody').innerHTML = `
+        <div style="text-align:center; margin-bottom: 12px;">
+          <img src="${pack.img}" alt="${pack.title}" style="max-height: 220px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15);">
         </div>
-        <h3>${pack.title}</h3>
-        <p style="color:var(--gold); font-weight:800; font-size:1.2rem; margin-bottom:12px;">Precio: ${data.singleText}</p>
+        <h3 style="font-family:'Oswald'; font-size:1.6rem; color:var(--primary-dj); margin-bottom:6px;">${pack.title}</h3>
+        <p style="color:#ffb703; font-weight:800; font-size:1.15rem; margin-bottom:12px;">Precio: ${data.djSingleText}</p>
         <pre>${pack.fullContent}</pre>
       `;
 
-      document.getElementById('modalBody').innerHTML = bodyHtml;
-      
-      var paymentHint = (countryCode === 'BO') ? "\n📱 *Método preferido:* Pago por QR Simple" : "";
-      var packMsg = 
-        "🎛️ *¡HOLA! QUIERO COMPRAR UN PACK INDIVIDUAL* 🎶\n\n" +
-        "📀 *Pack seleccionado:* *" + pack.title + "*\n" +
-        "🌎 *País:* " + data.country + "\n" +
-        "💵 *Precio:* *" + data.singleText + "*" + paymentHint + "\n" +
-        "⚡ *Formato:* Descarga directa / Acceso inmediato\n\n" +
-        "👉 _¿Me indicas las cuentas y formas de pago disponibles?_ 🎧";
-
-      document.getElementById('modalBuyWhatsApp').href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent(packMsg);
+      document.getElementById('modalBuyWhatsApp').href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent("🎛️ *¡HOLA! ME INTERESA UN PACK DJ* 🎶\n\n📀 *Pack:* *" + pack.title + "*\n🌎 *País:* " + data.country + "\n💵 *Precio:* *" + data.djSingleText + "*" + (data.djPayNote || "") + "\n\n¿Cuáles son las formas de pago disponibles?");
 
       document.getElementById('modalAddToCart').onclick = function() {
-        addToCart(pack.title);
-        closePackModal();
+        agregarAlCarrito(pack.title, 'dj_single');
+        cerrarModalPack();
       };
 
       document.getElementById('packModal').classList.add('active');
     }
 
-    function closePackModal() {
+    function cerrarModalPack() {
       document.getElementById('packModal').classList.remove('active');
+      currentModalPack = null;
     }
 
-    function closeModalOnBackdrop(e) {
-      if (e.target.id === 'packModal') closePackModal();
-    }
-
-    // CARRITO DE COMPRAS
+    // ==========================================
+    // SISTEMA DE CARRITO MULTISECCIÓN DINÁMICO
+    // ==========================================
     function toggleCartModal() {
       document.getElementById('cartModal').classList.toggle('active');
     }
 
-    function addToCart(packTitle) {
-      if (!cart.includes(packTitle)) {
-        cart.push(packTitle);
-        updateCartUI();
-        showToast("¡Pack agregado al carrito!");
+    function agregarAlCarrito(titulo, tipo) {
+      const yaExiste = cart.some(item => item.titulo === titulo);
+      if (!yaExiste) {
+        cart.push({ titulo: titulo, tipo: tipo });
+        actualizarCarritoUI();
+        mostrarAviso("¡Agregado al Carrito!");
       } else {
-        showToast("Este pack ya está en tu carrito");
+        alert("Este producto ya está en tu carrito.");
       }
     }
 
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      updateCartUI();
+    function eliminarDelCarrito(idx) {
+      cart.splice(idx, 1);
+      actualizarCarritoUI();
     }
 
-    function updateCartUI() {
-      document.getElementById('cartCount').innerText = cart.length;
-      var list = document.getElementById('cartItemsList');
-      var code = document.getElementById('countrySelect').value;
-      var data = pricingData[code] || pricingData.AR;
+    function obtenerPrecioTexto(tipo, data) {
+      if (tipo === 'balada_single') return data.baladas.mp3;
+      if (tipo === 'balada_combo') return data.baladas.combo;
+      if (tipo === 'software') return data.softText;
+      if (tipo === 'dj_single') return data.djSingleText;
+      if (tipo === 'dj_promo') return data.djPromoText.replace("Los 12 Packs por ", "");
+      return data.djSingleText;
+    }
+
+    function actualizarCarritoUI() {
+      const cCount = document.getElementById('cartCount');
+      if (cCount) cCount.innerText = cart.length;
+
+      const list = document.getElementById('cartItemsList');
+      const data = countryMasterData[currentSelectedCountry] || countryMasterData.AR;
+      if (!list) return;
 
       if (cart.length === 0) {
         list.innerHTML = '<p style="color: var(--text-muted); text-align:center; padding: 10px 0;">Tu carrito está vacío</p>';
-        document.getElementById('cartTotalPrice').innerText = "0 " + data.singleText.replace(/[0-9.,]/g, '').trim();
+        document.getElementById('cartTotalPrice').innerText = "$0";
         return;
       }
 
-      var html = '';
-      var totalVal = cart.length * data.singleVal;
+      let html = '';
+      let sumaTotal = 0;
 
-      cart.forEach(function(item, idx) {
+      cart.forEach((item, idx) => {
+        const precioUnitarioNum = data.preciosNum[item.tipo] || 0;
+        sumaTotal += precioUnitarioNum;
+        const textoPrecio = obtenerPrecioTexto(item.tipo, data);
+
         html += `
           <div class="cart-item-row">
-            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px;">${item}</span>
-            <div>
-              <span style="color:var(--gold); font-weight:700;">${data.singleText}</span>
-              <i class="fa-solid fa-trash cart-item-remove" onclick="removeFromCart(${idx})"></i>
+            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px;" title="${item.titulo}">
+              ${item.titulo}
+            </span>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:#ffb703; font-weight:700;">${textoPrecio}</span>
+              <i class="fa-solid fa-trash" onclick="eliminarDelCarrito(${idx})" style="color:#ff007f; cursor:pointer;" title="Quitar"></i>
             </div>
           </div>
         `;
       });
 
       list.innerHTML = html;
-      var formattedTotal = totalVal.toLocaleString() + " " + data.singleText.replace(/[0-9.,]/g, '').trim();
-      document.getElementById('cartTotalPrice').innerText = formattedTotal;
+      document.getElementById('cartTotalPrice').innerText = data.currencySymbol + " " + sumaTotal.toLocaleString() + " " + data.currencyCode;
     }
 
-    function checkoutCartWhatsApp() {
+    function checkoutCarritoWhatsApp() {
       if (cart.length === 0) {
-        alert("Agrega al menos un pack al carrito.");
+        alert("Agrega al menos un pack o software al carrito.");
         return;
       }
+      const data = countryMasterData[currentSelectedCountry] || countryMasterData.AR;
+      let sumaTotal = 0;
 
-      var code = document.getElementById('countrySelect').value;
-      var data = pricingData[code] || pricingData.AR;
-      var totalVal = cart.length * data.singleVal;
-      var formattedTotal = totalVal.toLocaleString() + " " + data.singleText.replace(/[0-9.,]/g, '').trim();
-      var paymentHint = (code === 'BO') ? "\n📱 *Método preferido:* Pago por QR Simple" : "";
+      let msg = "🛒 *¡HOLA! QUIERO CONFIRMAR MI PEDIDO MULTISECCIÓN* 📦🎧\n\n";
+      msg += "📋 *PRODUCTOS SELECCIONADOS (" + cart.length + "):*\n";
 
-      var msg = "🛒 *¡HOLA! QUIERO CONFIRMAR MI PEDIDO DEL CARRITO* 🎧\n\n" +
-                "📋 *PACKS SELECCIONADOS (" + cart.length + "):*\n";
-
-      cart.forEach(function(item, idx) {
-        msg += "  " + (idx + 1) + ". 📀 *" + item + "* — _" + data.singleText + "_\n";
+      cart.forEach((item, idx) => {
+        const precioNum = data.preciosNum[item.tipo] || 0;
+        sumaTotal += precioNum;
+        const textoPrecio = obtenerPrecioTexto(item.tipo, data);
+        msg += "  " + (idx + 1) + ". *" + item.titulo + "* — (" + textoPrecio + ")\n";
       });
 
-      msg += "\n🌎 *País:* " + data.country + "\n" +
-             "💰 *TOTAL A ABONAR:* *" + formattedTotal + "*" + paymentHint + "\n" +
-             "⚡ *Entrega:* Inmediata a mi E-mail\n\n" +
-             "👉 _¿Me envías los datos de transferencia o link de pago para completar la compra?_ 🚀";
+      const totalFormateado = data.currencySymbol + " " + sumaTotal.toLocaleString() + " " + data.currencyCode;
+
+      msg += "\n🌎 *País:* " + data.country + " " + data.flag + "\n";
+      msg += "💰 *TOTAL FINAL:* *" + totalFormateado + "*" + (data.djPayNote || "") + "\n";
+      msg += "⚡ *Entrega:* Enlaces directos a mi correo electrónico\n\n";
+      msg += "👉 _¿Me facilitas los medios de pago para completar la compra de todos estos productos? Gracias._";
 
       window.open("https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent(msg), '_blank');
     }
 
-    function showToast(text) {
-      var toast = document.createElement('div');
-      toast.innerText = text;
-      toast.style.position = 'fixed';
-      toast.style.bottom = '150px';
-      toast.style.left = '50%';
-      toast.style.transform = 'translateX(-50%)';
-      toast.style.background = '#25d366';
-      toast.style.color = '#000';
-      toast.style.fontWeight = '800';
-      toast.style.padding = '10px 20px';
-      toast.style.borderRadius = '30px';
-      toast.style.zIndex = '3000';
-      toast.style.boxShadow = '0 4px 15px rgba(0,0,0,0.5)';
-      document.body.appendChild(toast);
-      setTimeout(function() { toast.remove(); }, 2000);
+    function mostrarAviso(texto) {
+      const aviso = document.createElement('div');
+      aviso.innerText = texto;
+      aviso.style.position = 'fixed';
+      aviso.style.bottom = '165px';
+      aviso.style.right = '90px';
+      aviso.style.background = '#25d366';
+      aviso.style.color = '#000';
+      aviso.style.fontWeight = '800';
+      aviso.style.padding = '8px 18px';
+      aviso.style.borderRadius = '30px';
+      aviso.style.zIndex = '3000';
+      aviso.style.boxShadow = '0 4px 15px rgba(0,0,0,0.6)';
+      document.body.appendChild(aviso);
+      setTimeout(() => aviso.remove(), 1800);
     }
 
-    // ACTUALIZACIÓN DE PRECIOS POR PAÍS
-    function updatePrices() {
-      var select = document.getElementById('countrySelect');
-      var code = select.value;
-      var data = pricingData[code] || pricingData.AR;
-
-      document.getElementById('promoPriceText').innerText = "💥 " + data.promoText + " 💥";
-
-      var prices = document.querySelectorAll('.pack-single-price');
-      for (var i = 0; i < prices.length; i++) {
-        prices[i].innerText = data.singleText;
-      }
-
-      var paymentHint = (code === 'BO') ? "\n📱 *Método preferido:* Pago por QR Simple" : "";
-
-      // Promo WhatsApp
-      var promoMsg = 
-        "🎧 *¡HOLA! QUIERO ADQUIRIR LA SUPER PROMO DJ* 🔥\n\n" +
-        "📀 *Detalle del Pedido:* Mega Promo 12 Packs Completos\n" +
-        "🌎 *País:* " + data.country + "\n" +
-        "💵 *Total a abonar:* " + data.promoText + paymentHint + "\n" +
-        "⚡ *Entrega:* Enlaces directos a mi email / Cloud\n\n" +
-        "👉 _¿Me facilitas los datos de pago para acceder de inmediato? Gracias._ 🚀";
-
-      document.getElementById('btnPromoWhatsApp').href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent(promoMsg);
-      document.getElementById('floatWhatsApp').href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent(promoMsg);
-
-      // Botones individuales de cada pack
-      var buttons = document.querySelectorAll('.btn-pack-buy');
-      for (var j = 0; j < buttons.length; j++) {
-        var pack = buttons[j].getAttribute('data-pack');
-        var packMsg = 
-          "🎛️ *¡HOLA! QUIERO COMPRAR UN PACK INDIVIDUAL* 🎶\n\n" +
-          "📀 *Pack seleccionado:* *" + pack + "*\n" +
-          "🌎 *País:* " + data.country + "\n" +
-          "💵 *Precio:* *" + data.singleText + "*" + paymentHint + "\n" +
-          "⚡ *Formato:* Descarga directa / Acceso inmediato\n\n" +
-          "👉 _¿Me indicas las cuentas y formas de pago disponibles?_ 🎧";
-
-        buttons[j].href = "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent(packMsg);
-        buttons[j].target = "_blank";
-      }
-
-      updateCartUI();
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', () => {
       renderExtraPacks();
-      updatePrices();
+      actualizarPrecios();
     });
   </script>
 </body>
