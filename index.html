@@ -19,6 +19,8 @@
       --cyan-brand: #3ecdf4;
       --accent-pink: #ff007f;
       --primary-dj: #00f2fe;
+      --neon-gold: #ffb703;
+      --neon-purple: #8b5cf6;
       --text-light: #ffffff;
       --text-muted: #b5b5c3;
       --card-border: rgba(245, 192, 68, 0.25);
@@ -87,11 +89,11 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 22px;
+      padding: 10px 20px;
       border-radius: 50px;
       background: #181d2d;
       color: #cbd5e1;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 700;
       border: 1px solid rgba(255,255,255,0.15);
       cursor: pointer;
@@ -141,6 +143,13 @@
       color: #fff;
     }
 
+    .badge-top.cyan {
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--primary-dj);
+      border: 1px solid var(--primary-dj);
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+    }
+
     .country-box {
       background: linear-gradient(135deg, rgba(30, 30, 48, 0.9), rgba(18, 18, 28, 0.9));
       border: 2px solid var(--gold-primary);
@@ -169,7 +178,7 @@
     .card-actions-flex {
       display: flex;
       gap: 8px;
-      margin-top: 10px;
+      margin-top: auto;
     }
 
     .btn-buy {
@@ -457,6 +466,91 @@
       font-size: 0.75rem;
     }
 
+    /* ESTILOS DE LA SECCIÓN DE COLECCIONES */
+    .colec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 30px 0 45px;
+    }
+
+    .colec-card {
+      background: #0d1322;
+      border: 1px solid #1a233a;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .colec-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 240, 255, 0.5);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .colec-img-box {
+      margin: 12px;
+      height: 240px;
+      background: #04060c;
+      border-radius: 12px;
+      border: 1.5px solid var(--primary-dj);
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.25), inset 0 0 10px rgba(0, 240, 255, 0.1);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      overflow: hidden;
+    }
+
+    .colec-card.vip .colec-img-box {
+      border-color: var(--neon-gold);
+      box-shadow: 0 0 16px rgba(255, 183, 3, 0.4), inset 0 0 10px rgba(255, 183, 3, 0.15);
+    }
+
+    .colec-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.8));
+    }
+
+    .colec-vip-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(135deg, #ffb703, #d97706);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 900;
+      padding: 4px 8px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      box-shadow: 0 0 12px rgba(255, 183, 3, 0.6);
+      z-index: 2;
+    }
+
+    .colec-search-input {
+      width: 100%;
+      background: #0d1322;
+      border: 1px solid #22304d;
+      border-radius: 14px;
+      padding: 14px 20px;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .colec-search-input:focus {
+      border-color: var(--primary-dj);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+    }
+
     /* MODAL */
     .modal-backdrop {
       position: fixed;
@@ -543,7 +637,7 @@
       position: fixed;
       bottom: 165px;
       right: 25px;
-      width: 360px;
+      width: 380px;
       max-width: 92vw;
       background: #121624;
       border: 1px solid var(--primary-dj);
@@ -594,13 +688,13 @@
     @media (max-width: 768px) {
       .top-menu-inner { justify-content: center; }
       .menu-links { width: 100%; justify-content: center; }
-      .nav-link-btn { font-size: 0.82rem; padding: 8px 14px; }
+      .nav-link-btn { font-size: 0.82rem; padding: 8px 12px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGACIÓN SUPERIOR CON BOTONES DIRECTOS -->
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR CON 4 PESTAÑAS -->
   <header class="top-menu-bar">
     <div class="top-menu-inner">
       <div class="brand-title">
@@ -608,13 +702,16 @@
       </div>
       <nav class="menu-links">
         <button type="button" class="nav-link-btn active" id="btn-nav-baladas" onclick="mostrarSeccion('baladas')">
-          <i class="fa-solid fa-heart"></i> Baladas Románticas
+          <i class="fa-solid fa-heart"></i> Baladas
         </button>
         <button type="button" class="nav-link-btn" id="btn-nav-software" onclick="mostrarSeccion('software')">
-          <i class="fa-solid fa-laptop-code"></i> Programas y Software
+          <i class="fa-solid fa-laptop-code"></i> Software
         </button>
         <button type="button" class="nav-link-btn" id="btn-nav-djs" onclick="mostrarSeccion('djs')">
-          <i class="fa-solid fa-bolt"></i> Packs DJs y Promos
+          <i class="fa-solid fa-bolt"></i> Packs DJs
+        </button>
+        <button type="button" class="nav-link-btn" id="btn-nav-colecciones" onclick="mostrarSeccion('colecciones')">
+          <i class="fa-solid fa-layer-group"></i> Colecciones Exclusivas
         </button>
       </nav>
     </div>
@@ -968,15 +1065,15 @@
         <div class="country-box" style="border-color: var(--primary-dj);">
           <label for="select-djs" style="color: var(--primary-dj);"><i class="fa-solid fa-earth-americas"></i> ELIGE TU PAÍS PARA VER TUS PRECIOS LOCALES:</label>
           <select id="select-djs" class="country-select" style="border-color: var(--primary-dj);" onchange="cambiarPais(this.value)">
-            <option value="AR" selected>🇦🇷 Argentina - 10.000 pesos</option>
-            <option value="MX">🇲🇽 México - 150 pesos</option>
-            <option value="BO">🇧🇴 Bolivia - 100 Bs (Pago QR)</option>
-            <option value="CL">🇨🇱 Chile - 10.000 CLP</option>
-            <option value="CO">🇨🇴 Colombia - 50.000 COP</option>
-            <option value="US">🇺🇸 Estados Unidos - 15 USD</option>
-            <option value="UY">🇺🇾 Uruguay - 500 UYU</option>
-            <option value="ES">🇪🇸 España - 15 euros</option>
-            <option value="PE">🇵🇪 Perú - 50 soles</option>
+            <option value="AR" selected>🇦🇷 Argentina (ARS)</option>
+            <option value="MX">🇲🇽 México (MXN)</option>
+            <option value="BO">🇧🇴 Bolivia (BOB)</option>
+            <option value="CL">🇨🇱 Chile (CLP)</option>
+            <option value="CO">🇨🇴 Colombia (COP)</option>
+            <option value="US">🇺🇸 Estados Unidos / Internacional (USD)</option>
+            <option value="UY">🇺🇾 Uruguay (UYU)</option>
+            <option value="ES">🇪🇸 España (EUR)</option>
+            <option value="PE">🇵🇪 Perú (PEN)</option>
           </select>
         </div>
 
@@ -1002,7 +1099,6 @@
 
       <!-- LOS 12 PACKS COMPLETOS -->
       <div class="dj-grid">
-        <!-- 1. VIDEOS ACTUALES VOL 1 -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Full HD 1080p</span><img src="https://i.imgur.com/lWAG8Hp.jpg" alt="Videos Actuales Remix Vol 1"></div>
           <div class="dj-card-body">
@@ -1017,7 +1113,6 @@
           </div>
         </div>
 
-        <!-- 2. VIDEOS ACTUALES VOL 2 -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Extended 2026</span><img src="https://i.imgur.com/CwuqMIS.jpg" alt="Videos Actuales Vol 2"></div>
           <div class="dj-card-body">
@@ -1032,7 +1127,6 @@
           </div>
         </div>
 
-        <!-- 3. VIDEOS VOL 3 -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Top Hits</span><img src="https://i.imgur.com/1pl0Vdb.jpg" alt="Pack Videos Vol 3"></div>
           <div class="dj-card-body">
@@ -1047,7 +1141,6 @@
           </div>
         </div>
 
-        <!-- 4. 80s EXTENDED -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Joya Retro 80s</span><img src="https://i.imgur.com/jTMjA3M.jpg" alt="80s Extended Videos"></div>
           <div class="dj-card-body">
@@ -1062,7 +1155,6 @@
           </div>
         </div>
 
-        <!-- 5. 220 MIXES -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Promo 2x1</span><img src="https://i.imgur.com/ycBW4pV.jpg" alt="Coleccion 220 Mixes"></div>
           <div class="dj-card-body">
@@ -1077,7 +1169,6 @@
           </div>
         </div>
 
-        <!-- 6. BALADAS VOL 2 FLAC -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">FLAC Hi-Res</span><img src="https://i.imgur.com/4NrTTmt.jpg" alt="Baladas FLAC"></div>
           <div class="dj-card-body">
@@ -1092,7 +1183,6 @@
           </div>
         </div>
 
-        <!-- 7. BALADAS ROMÁNTICAS VOL 1 (AGREGADO) -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">MP3 & HD</span><img src="https://i.imgur.com/c7OYH9J.jpg" alt="Baladas Vol 1"></div>
           <div class="dj-card-body">
@@ -1107,7 +1197,6 @@
           </div>
         </div>
 
-        <!-- 8. EURODANCE 1500 VIDEOS (AGREGADO) -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Eurodance 90s</span><img src="https://i.imgur.com/B4092IL.jpg" alt="Eurodance 1500 Videos"></div>
           <div class="dj-card-body">
@@ -1122,7 +1211,6 @@
           </div>
         </div>
 
-        <!-- 9. K-POP DEFINITIVO (AGREGADO) -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">K-Pop Hits</span><img src="https://i.imgur.com/HuS1bj4.jpg" alt="Pack K-Pop"></div>
           <div class="dj-card-body">
@@ -1137,7 +1225,6 @@
           </div>
         </div>
 
-        <!-- 10. POP LATINO VOL 1 (AGREGADO) -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Pop Latino</span><img src="https://i.imgur.com/cj2n9Cg.jpg" alt="Pop Latino Vol 1"></div>
           <div class="dj-card-body">
@@ -1152,7 +1239,6 @@
           </div>
         </div>
 
-        <!-- 11. MALETA VDJ RETRO (AGREGADO) -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">VDJ Retro</span><img src="https://i.imgur.com/hFiFZO8.jpg" alt="Maleta VDJ Retro"></div>
           <div class="dj-card-body">
@@ -1167,7 +1253,6 @@
           </div>
         </div>
 
-        <!-- 12. HARD ROCK & CLÁSICOS (AGREGADO) -->
         <div class="dj-card">
           <div class="dj-card-img-wrap"><span class="dj-card-badge">Hard Rock</span><img src="https://i.imgur.com/kBCBdw6.jpg" alt="Hard Rock Pack"></div>
           <div class="dj-card-body">
@@ -1183,7 +1268,7 @@
         </div>
       </div>
 
-      <!-- 7 PACKS ADICIONALES -->
+      <!-- PACKS ADICIONALES 2026 -->
       <div style="text-align: center; margin: 50px 0 20px;">
         <span class="badge-top" style="background: linear-gradient(90deg, #00f2fe, #4facfe); color:#000;">⚡ Nuevas Colecciones 2026</span>
         <h2 style="font-family: 'Oswald'; font-size: 2.2rem; text-transform: uppercase; color: var(--primary-dj); margin-top: 8px;">
@@ -1196,7 +1281,48 @@
     </div>
   </section>
 
-  <!-- MODAL DE INFORMACIÓN DETALLADA -->
+  <!-- ========================================== -->
+  <!-- SECCIÓN 4: COLECCIONES EXCLUSIVAS          -->
+  <!-- ========================================== -->
+  <section id="seccion-colecciones" class="seccion-contenido" style="display: none;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 25px;">
+        <span class="badge-top cyan">⭐ Catálogo Digital Exclusivo</span>
+        <h1 style="font-family: 'Oswald'; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #00f0ff, #ffffff, #ff007f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Packs Exclusivos Para DJs
+        </h1>
+        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 20px;">
+          Calidad de estudio, ediciones extendidas, videoclips en alta resolución y remezclas históricas.
+        </p>
+
+        <!-- SELECTOR COLECCIONES -->
+        <div class="country-box" style="border-color: var(--neon-purple);">
+          <label for="select-colecciones" style="color: var(--primary-dj);"><i class="fa-solid fa-earth-americas"></i> SELECCIONA TU PAÍS PARA VER PRECIOS:</label>
+          <select id="select-colecciones" class="country-select" style="border-color: var(--neon-purple);" onchange="cambiarPais(this.value)">
+            <option value="AR" selected>🇦🇷 Argentina (ARS)</option>
+            <option value="MX">🇲🇽 México (MXN)</option>
+            <option value="BO">🇧🇴 Bolivia (BOB)</option>
+            <option value="CL">🇨🇱 Chile (CLP)</option>
+            <option value="CO">🇨🇴 Colombia (COP)</option>
+            <option value="US">🇺🇸 Estados Unidos / Internacional (USD)</option>
+            <option value="UY">🇺🇾 Uruguay (UYU)</option>
+            <option value="ES">🇪🇸 España (EUR)</option>
+            <option value="PE">🇵🇪 Perú (PEN)</option>
+          </select>
+        </div>
+
+        <!-- BUSCADOR -->
+        <div style="max-width: 650px; margin: 0 auto 30px;">
+          <input type="text" id="searchInputColecciones" class="colec-search-input" placeholder="🔍 Buscar por nombre o género (ej: Ultimix, 80s, Cumbia, Techno, Rock...)" oninput="renderColeccionesCatalog()" />
+        </div>
+      </div>
+
+      <!-- CATÁLOGO DINÁMICO DE COLECCIONES -->
+      <div class="colec-grid" id="coleccionesGrid"></div>
+    </div>
+  </section>
+
+  <!-- MODAL DE INFORMACIÓN DETALLADA (PACKS DJS) -->
   <div class="modal-backdrop" id="packModal">
     <div class="modal-content">
       <button type="button" class="modal-close" onclick="cerrarModalPack()"><i class="fa-solid fa-xmark"></i></button>
@@ -1212,7 +1338,7 @@
     </div>
   </div>
 
-  <!-- CARRITO DE COMPRAS FLOTANTE (DISPONIBLE EN LAS 3 PÁGINAS) -->
+  <!-- CARRITO DE COMPRAS FLOTANTE UNIFICADO -->
   <button type="button" class="cart-drawer-btn" id="cartDrawerBtn" onclick="toggleCartModal()" title="Ver Carrito">
     <i class="fa-solid fa-cart-shopping"></i>
     <span class="cart-count" id="cartCount">0</span>
@@ -1246,7 +1372,7 @@
     <p style="color: var(--text-muted); font-size: 0.78rem; margin-top: 10px;">&copy; 2026 Todos los derechos reservados.</p>
   </footer>
 
-  <!-- SCRIPT UNIFICADO CON CARRITO GLOBAL -->
+  <!-- SCRIPT UNIFICADO -->
   <script>
     const WHATSAPP_PHONE = "5492613865082";
 
@@ -1257,8 +1383,18 @@
         softText: "$10.000 ARS",
         djSingleText: "10.000 pesos",
         djPromoText: "Los 12 Packs por 20.000 pesos",
+        colecRegularText: "$9.000 ARS",
+        colecVipText: "$20.000 ARS",
         currencySymbol: "$", currencyCode: "ARS",
-        preciosNum: { balada_single: 8000, balada_combo: 15000, software: 10000, dj_single: 10000, dj_promo: 20000 },
+        preciosNum: { 
+          balada_single: 8000, 
+          balada_combo: 15000, 
+          software: 10000, 
+          dj_single: 10000, 
+          dj_promo: 20000,
+          colec_regular: 9000,
+          colec_vip: 20000
+        },
         djPayNote: ""
       },
       MX: {
@@ -1267,8 +1403,18 @@
         softText: "150 MXN",
         djSingleText: "150 pesos",
         djPromoText: "Los 12 Packs por 300 pesos",
+        colecRegularText: "$150 MXN",
+        colecVipText: "$400 MXN",
         currencySymbol: "$", currencyCode: "MXN",
-        preciosNum: { balada_single: 150, balada_combo: 250, software: 150, dj_single: 150, dj_promo: 300 },
+        preciosNum: { 
+          balada_single: 150, 
+          balada_combo: 250, 
+          software: 150, 
+          dj_single: 150, 
+          dj_promo: 300,
+          colec_regular: 150,
+          colec_vip: 400
+        },
         djPayNote: ""
       },
       BO: {
@@ -1277,8 +1423,18 @@
         softText: "100 Bs",
         djSingleText: "100 Bs",
         djPromoText: "Los 12 Packs por 300 Bs",
+        colecRegularText: "100 Bs",
+        colecVipText: "300 Bs",
         currencySymbol: "Bs", currencyCode: "BOB",
-        preciosNum: { balada_single: 100, balada_combo: 200, software: 100, dj_single: 100, dj_promo: 300 },
+        preciosNum: { 
+          balada_single: 100, 
+          balada_combo: 200, 
+          software: 100, 
+          dj_single: 100, 
+          dj_promo: 300,
+          colec_regular: 100,
+          colec_vip: 300
+        },
         djPayNote: "\n📱 *Método preferido:* Pago por QR Simple"
       },
       CL: {
@@ -1287,8 +1443,18 @@
         softText: "8.000$ CLP",
         djSingleText: "10.000 CLP",
         djPromoText: "Los 12 Packs por 20.000 CLP",
+        colecRegularText: "$8.000 CLP",
+        colecVipText: "$20.000 CLP",
         currencySymbol: "$", currencyCode: "CLP",
-        preciosNum: { balada_single: 8000, balada_combo: 15000, software: 8000, dj_single: 10000, dj_promo: 20000 },
+        preciosNum: { 
+          balada_single: 8000, 
+          balada_combo: 15000, 
+          software: 8000, 
+          dj_single: 10000, 
+          dj_promo: 20000,
+          colec_regular: 8000,
+          colec_vip: 20000
+        },
         djPayNote: ""
       },
       CO: {
@@ -1297,8 +1463,18 @@
         softText: "50.000 COP",
         djSingleText: "50.000 COP",
         djPromoText: "Los 12 Packs por 200.000 COP",
+        colecRegularText: "$50.000 COP",
+        colecVipText: "$150.000 COP",
         currencySymbol: "$", currencyCode: "COP",
-        preciosNum: { balada_single: 80000, balada_combo: 150000, software: 50000, dj_single: 50000, dj_promo: 200000 },
+        preciosNum: { 
+          balada_single: 80000, 
+          balada_combo: 150000, 
+          software: 50000, 
+          dj_single: 50000, 
+          dj_promo: 200000,
+          colec_regular: 50000,
+          colec_vip: 150000
+        },
         djPayNote: ""
       },
       US: {
@@ -1307,8 +1483,18 @@
         softText: "10 USD",
         djSingleText: "15 USD",
         djPromoText: "Los 12 Packs por 50 USD",
+        colecRegularText: "$15 USD",
+        colecVipText: "$35 USD",
         currencySymbol: "$", currencyCode: "USD",
-        preciosNum: { balada_single: 15, balada_combo: 30, software: 10, dj_single: 15, dj_promo: 50 },
+        preciosNum: { 
+          balada_single: 15, 
+          balada_combo: 30, 
+          software: 10, 
+          dj_single: 15, 
+          dj_promo: 50,
+          colec_regular: 15,
+          colec_vip: 35
+        },
         djPayNote: ""
       },
       UY: {
@@ -1317,8 +1503,18 @@
         softText: "500 UYU",
         djSingleText: "500 UYU",
         djPromoText: "Los 12 Packs por 2.000 UYU",
+        colecRegularText: "$500 UYU",
+        colecVipText: "$2.000 UYU",
         currencySymbol: "$", currencyCode: "UYU",
-        preciosNum: { balada_single: 700, balada_combo: 1500, software: 500, dj_single: 500, dj_promo: 2000 },
+        preciosNum: { 
+          balada_single: 700, 
+          balada_combo: 1500, 
+          software: 500, 
+          dj_single: 500, 
+          dj_promo: 2000,
+          colec_regular: 500,
+          colec_vip: 2000
+        },
         djPayNote: ""
       },
       ES: {
@@ -1327,8 +1523,18 @@
         softText: "10 EUR",
         djSingleText: "15 euros",
         djPromoText: "Los 12 Packs por 50 euros",
+        colecRegularText: "15 €",
+        colecVipText: "35 €",
         currencySymbol: "€", currencyCode: "EUR",
-        preciosNum: { balada_single: 15, balada_combo: 25, software: 10, dj_single: 15, dj_promo: 50 },
+        preciosNum: { 
+          balada_single: 15, 
+          balada_combo: 25, 
+          software: 10, 
+          dj_single: 15, 
+          dj_promo: 50,
+          colec_regular: 15,
+          colec_vip: 35
+        },
         djPayNote: ""
       },
       PE: {
@@ -1337,8 +1543,18 @@
         softText: "40 PEN",
         djSingleText: "50 soles",
         djPromoText: "Los 12 Packs por 150 soles",
+        colecRegularText: "S/ 80",
+        colecVipText: "S/ 200",
         currencySymbol: "S/", currencyCode: "PEN",
-        preciosNum: { balada_single: 50, balada_combo: 90, software: 40, dj_single: 50, dj_promo: 150 },
+        preciosNum: { 
+          balada_single: 50, 
+          balada_combo: 90, 
+          software: 40, 
+          dj_single: 50, 
+          dj_promo: 150,
+          colec_regular: 80,
+          colec_vip: 200
+        },
         djPayNote: ""
       }
     };
@@ -1347,7 +1563,7 @@
       {
         id: "curso-dj-2026",
         title: "Pack Curso de DJ Desde Cero 2026",
-        img: "https://imgur.com/uw0LHQK.jpg",
+        img: "https://i.imgur.com/uw0LHQK.jpg",
         badge: "Tutoriales HD",
         tags: ["Virtual DJ 2026", "Rekordbox 7", "FL Studio 25"],
         desc: "Domina la cabina: configuración, STEMS en tiempo real y mezcla fluida.",
@@ -1356,7 +1572,7 @@
       {
         id: "la-nueva-ola-recuerdo",
         title: "La Nueva Ola • Club del Clan • Clásicos 60s y 70s",
-        img: "https://imgur.com/By3Lh8a.jpg",
+        img: "https://i.imgur.com/By3Lh8a.jpg",
         badge: "+1200 Éxitos",
         tags: ["Club del Clan", "Románticos 60s/70s"],
         desc: "Colección imperdible con Sandro, Palito Ortega, Leonardo Favio y Leo Dan.",
@@ -1365,7 +1581,7 @@
       {
         id: "previa-boliches-sets-2026",
         title: "Previa, Sets & Boliches 2026",
-        img: "https://imgur.com/FQGbuOR.jpg",
+        img: "https://i.imgur.com/FQGbuOR.jpg",
         badge: "13 Carpetas DJ",
         tags: ["Cachengue Remix", "Fer Palacio", "RKT & House"],
         desc: "Selección para DJs: Cachengue Remix 2026, Fer Palacio, Guaracha y RKT.",
@@ -1374,7 +1590,7 @@
       {
         id: "latinos-hits-fiesta-bailar",
         title: "Latinos Hits Fiesta – Para Bailar",
-        img: "https://imgur.com/nwqhiUH.jpg",
+        img: "https://i.imgur.com/nwqhiUH.jpg",
         badge: "15 Colecciones",
         tags: ["80s & 90s", "Top Hits 2026"],
         desc: "Éxitos retro y hits 2026: Shakira, Luis Miguel, Ricky Martin, Chayanne.",
@@ -1383,7 +1599,7 @@
       {
         id: "pack-greatest-hits-premium",
         title: "Pack Greatest Hits – Colección Premium",
-        img: "https://imgur.com/ofOewR3.jpg",
+        img: "https://i.imgur.com/ofOewR3.jpg",
         badge: "+1500 Temas",
         tags: ["70s 80s 90s 00s", "Pop Rock"],
         desc: "Más de 1.500 himnos universales por décadas sin temas de relleno.",
@@ -1392,7 +1608,7 @@
       {
         id: "pack-fiestero-2026",
         title: "Pack Fiesteros 2026 (Remix & Extended)",
-        img: "https://imgur.com/DwHtoUr.jpg",
+        img: "https://i.imgur.com/DwHtoUr.jpg",
         badge: "+3000 Tracks",
         tags: ["23 Carpetas", "Cuarteto", "Cumbia"],
         desc: "23 carpetas masivas: Afro House 2026, Cuarteto Puro y Cumbias Sonideras.",
@@ -1401,12 +1617,64 @@
       {
         id: "cumbias-sonideras-2026",
         title: "Pack Definitivo: Cumbias Sonideras 2026",
-        img: "https://imgur.com/3XXoZtk.jpg",
+        img: "https://i.imgur.com/3XXoZtk.jpg",
         badge: "Wepa & Sonidero",
         tags: ["Los Ángeles Azules", "Raymix"],
         desc: "El ambiente sonidero directo a tus parlantes con audio nítido sin distorsión.",
         fullContent: "🪗 CUMBIAS SONIDERAS 2026\n\nLos Ángeles Azules, Raymix, Celso Piña, Grupo Kual? y lo mejor del movimiento Wepa."
       }
+    ];
+
+    const COLECCIONES_DATA = [
+      { id: 'c-1', title: 'Promo Only', isVip: true, img: 'https://i.imgur.com/GQh36lC.jpeg', desc: 'Edición VIP con compilaciones promocionales exclusivas para DJs: versiones radio, club y mixes oficiales.' },
+      { id: 'c-2', title: 'Power House', isVip: false, img: 'https://i.imgur.com/U3d4oH6.jpeg', desc: 'Beats intensos y house enérgico listos para encender pistas de baile en festivales y clubs.' },
+      { id: 'c-3', title: 'Metallica Discografía', isVip: false, img: 'https://i.imgur.com/HZGn3li.jpeg', desc: 'Álbumes de estudio, directos esenciales y clásicos del heavy metal en máxima fidelidad acústica.' },
+      { id: 'c-4', title: 'Kuschelrock', isVip: false, img: 'https://i.imgur.com/yu579x3.jpeg', desc: 'La serie de baladas y rock romántico más famosa del mundo: himnos lentos para momentos especiales.' },
+      { id: 'c-5', title: 'Hot Track', isVip: false, img: 'https://i.imgur.com/KRnyfWg.jpeg', desc: 'Versiones de remezcla históricas con compases constantes e intros extendidas para mezclas perfectas.' },
+      { id: 'c-6', title: 'Hot Track 15 Aniversario', isVip: false, img: 'https://i.imgur.com/aSdNS9f.jpeg', desc: 'Edición conmemorativa de lujo con lo más destacado de la legendaria firma Hot Tracks.' },
+      { id: 'c-7', title: 'The Hot Classic', isVip: false, img: 'https://i.imgur.com/MvmQ6eD.jpeg', desc: 'Grandes clásicos atemporales seleccionados y editados en versiones especiales para pista.' },
+      { id: 'c-8', title: 'Últimix 01-60', isVip: false, img: 'https://i.imgur.com/d60itr2.jpeg', desc: 'Saga indispensable de 60 volúmenes que marcó la historia del remixing a nivel internacional.' },
+      { id: 'c-9', title: 'Últimix 1-9 Collection', isVip: false, img: 'https://i.imgur.com/BOD7ZA8.jpeg', desc: 'Los 9 primeros volúmenes fundacionales con las mezclas pioneras que crearon escuela.' },
+      { id: 'c-10', title: 'Últimix Looking Back', isVip: false, img: 'https://i.imgur.com/170cG1P.jpeg', desc: 'Especial retro con joyas del pasado adaptadas con beats continuos para los sets actuales.' },
+      { id: 'c-11', title: 'UNDERGROUND Beat', isVip: true, img: 'https://i.imgur.com/OlOnrww.jpeg', desc: 'Pack VIP con sonido underground de club, tracks densos y líneas de bajo envolventes.' },
+      { id: 'c-12', title: 'Fiestas Patrias Chile', isVip: false, img: 'https://i.imgur.com/5LY7o8H.jpeg', desc: 'Cuecas, cumbias, pachanga y los himnos bailables de las celebraciones chilenas.' },
+      { id: 'c-13', title: 'Cumbia Sound', isVip: false, img: 'https://i.imgur.com/rynKFf9.jpeg', desc: 'Cumbia santafesina, villera y tropical seleccionada especialmente para animar eventos.' },
+      { id: 'c-14', title: 'Karaoke Colección', isVip: false, img: 'https://i.imgur.com/XdPMZWM.jpeg', desc: 'Pistas instrumentales de calidad con letras sincronizadas para eventos sociales y animación.' },
+      { id: 'c-15', title: 'D Mode Colección', isVip: false, img: 'https://i.imgur.com/iK2mVMr.jpeg', desc: 'Depeche Mode al completo: remixes raros, maxis extendidos y tracks clásicos de synthpop.' },
+      { id: 'c-16', title: 'Hit Collection', isVip: false, img: 'https://i.imgur.com/EJCRbd0.jpeg', desc: 'Los números 1 indiscutidos de la radio y discoteca internacional que no pueden faltar.' },
+      { id: 'c-17', title: 'Polymarchs Collection', isVip: false, img: 'https://i.imgur.com/MhUcHeX.jpeg', desc: 'El sonido y la energía de la discoteca móvil más grande del mundo: Hi-NRG e italo en vivo.' },
+      { id: 'c-18', title: 'Cumbia Chilena 1300 Videos', isVip: false, img: 'https://i.imgur.com/OpsWJS1.jpeg', desc: 'Mega colección audiovisual con 1300 videos en alta calidad para pantallas gigantes.' },
+      { id: 'c-19', title: 'Eurodance 90 500 Hits', isVip: false, img: 'https://i.imgur.com/88GEA4Q.jpeg', desc: '500 hits de la época de oro del eurodance: bases rápidas, sintetizadores y coros legendarios.' },
+      { id: 'c-20', title: 'Funkymix', isVip: false, img: 'https://i.imgur.com/PGV8JyQ.jpeg', desc: 'Lo mejor del hip hop, funk y sonido urbano estadounidense con intros para DJ.' },
+      { id: 'c-21', title: 'X-Mix Club Classic', isVip: false, img: 'https://i.imgur.com/us3PZmx.jpeg', desc: 'Ediciones clásicas de la mítica productora X-Mix para sets retros impecables.' },
+      { id: 'c-22', title: 'Maximania', isVip: false, img: 'https://i.imgur.com/0c9xIt0.jpeg', desc: 'Grandes versiones Maxi Single completas con duraciones extendidas de estudio.' },
+      { id: 'c-23', title: 'Retro 80 90 436 Maxis', isVip: false, img: 'https://i.imgur.com/Ktbar9F.jpeg', desc: '436 versiones maxi en audio restaurado de las décadas de 1980 y 1990.' },
+      { id: 'c-24', title: '500 Megamixes por Artistas', isVip: false, img: 'https://i.imgur.com/duU9E64.jpeg', desc: '500 megamixes continuos clasificados por artista para cambios dinámicos de cabina.' },
+      { id: 'c-25', title: 'Música de los Dioses', isVip: false, img: 'https://i.imgur.com/aQRJnXa.jpeg', desc: 'Música ambiental, pasajes instrumentales épicos y new age para momentos de relajación.' },
+      { id: 'c-26', title: 'Flashback Collection Videos', isVip: false, img: 'https://i.imgur.com/u4WTafb.jpeg', desc: 'Videoclips retro seleccionados y masterizados para proyectar en pantallas y eventos.' },
+      { id: 'c-27', title: 'Disco Funk Groove', isVip: false, img: 'https://i.imgur.com/Vt3cys3.jpeg', desc: 'Líneas de bajo contagiosas y sonido setentero puro para mantener al público bailando.' },
+      { id: 'c-28', title: 'Pack ELECTRONIKA Retro y Actual', isVip: false, img: 'https://i.imgur.com/fjqTslB.jpeg', desc: 'La evolución de la música electrónica, combinando clásicos analógicos y hits del festival actual.' },
+      { id: 'c-29', title: 'Radios Chile', isVip: false, img: 'https://i.imgur.com/Xrp8bVF.jpeg', desc: 'Grabaciones, cortinas, jingles y éxitos sonados en las principales radioemisoras de Chile.' },
+      { id: 'c-30', title: 'Dance Club Vol 2', isVip: false, img: 'https://i.imgur.com/9AJG8TA.jpeg', desc: 'Segunda entrega de bombazos dance club con remixes contundentes para sesiones largas.' },
+      { id: 'c-31', title: 'Dance Club 100% Dance', isVip: false, img: 'https://i.imgur.com/BrR9nNr.jpeg', desc: 'Música dance pura y enérgica para mantener la pista encendida de principio a fin.' },
+      { id: 'c-32', title: 'High Energy Collection', isVip: false, img: 'https://i.imgur.com/WMmDBPu.jpeg', desc: 'Himnos Hi-NRG con sintetizadores veloces y la vibra electrizante de los años 80.' },
+      { id: 'c-33', title: 'Flashback Collection MP3', isVip: false, img: 'https://i.imgur.com/UHECyp1.jpeg', desc: 'Librería digital de canciones retro emblemáticas, catalogadas por año y género.' },
+      { id: 'c-34', title: 'Billboard 100 Hits 1950 - 2024', isVip: false, img: 'https://i.imgur.com/2u1jItL.jpeg', desc: 'Más de 70 años de música: todos los temas que llegaron a la cima del ranking mundial.' },
+      { id: 'c-35', title: 'Hot Tracks 15 Aniversario (Ed. II)', isVip: false, img: 'https://i.imgur.com/qloVlbE.jpeg', desc: 'Segunda entrega con remixes extendidos históricos de la colección Hot Tracks.' },
+      { id: 'c-36', title: '80 Extended Club Series', isVip: false, img: 'https://i.imgur.com/kkYPoZw.jpeg', desc: 'Versiones 12 pulgadas con intros y secciones rítmicas diseñadas para mezclar en vivo.' },
+      { id: 'c-37', title: 'Serious Beats Collection', isVip: true, img: 'https://i.imgur.com/J1P12zx.jpeg', desc: 'Pack VIP con la compilación belga que definió el techno, rave y acid house europeo.' },
+      { id: 'c-38', title: 'Super Techno Discotech', isVip: false, img: 'https://i.imgur.com/szvrb8S.jpeg', desc: 'Techno noventero potente con sonidos directos de los raves y clubes más icónicos.' },
+      { id: 'c-39', title: '90 Extended Club Series', isVip: false, img: 'https://i.imgur.com/ovn0zDe.jpeg', desc: 'Maxis de club de la década de 1990 con versiones extendidas de euro y house bailable.' },
+      { id: 'c-40', title: 'Rock en tu Idioma', isVip: false, img: 'https://i.imgur.com/IfZb7Lk.jpeg', desc: 'Himnos de las mejores bandas de rock en español de Argentina, México, Chile y España.' },
+      { id: 'c-41', title: 'Disco Essential', isVip: false, img: 'https://i.imgur.com/ODSgvLx.jpeg', desc: 'Pistas esenciales del fenómeno disco en excelente definición de audio para revivir la era dorada.' },
+      { id: 'c-42', title: 'Ranchera Mexicana', isVip: false, img: 'https://i.imgur.com/BKniTmb.jpeg', desc: 'Mariachis, corridos tradicionales y rancheras clásicas con los artistas más representativos.' },
+      { id: 'c-43', title: 'Master Mix', isVip: false, img: 'https://i.imgur.com/TRCnShB.jpeg', desc: 'Producciones profesionales británicas de Mastermix con transiciones creativas para DJs de eventos.' },
+      { id: 'c-44', title: 'Boleros Mix', isVip: false, img: 'https://i.imgur.com/aNIt1gh.jpeg', desc: 'Los boleros más memorables de la música hispana en versiones continuas.' },
+      { id: 'c-45', title: 'Rythin', isVip: false, img: 'https://i.imgur.com/fOVQam2.jpeg', desc: 'Bases rítmicas y pistas sólidas para transiciones de cabina fluidas.' },
+      { id: 'c-46', title: 'Hit Connection', isVip: false, img: 'https://i.imgur.com/eohdyDs.jpeg', desc: 'Grandes éxitos de las listas de radio del continente europeo en versiones directas.' },
+      { id: 'c-47', title: 'Dance Collection', isVip: false, img: 'https://i.imgur.com/LMLlhQh.jpeg', desc: 'Recopilación con los himnos bailables más representativos de varias décadas.' },
+      { id: 'c-48', title: 'Pack Country', isVip: false, img: 'https://i.imgur.com/S79JF2p.jpeg', desc: 'Baladas y country rock norteamericano, óptimo para fiestas temáticas.' },
+      { id: 'c-49', title: 'One Shot Disco', isVip: false, img: 'https://i.imgur.com/CKwPVKl.jpeg', desc: 'Canciones disco directas con compás constante para cortes secos y dinámicos.' }
     ];
 
     let currentSelectedCountry = "AR";
@@ -1417,10 +1685,12 @@
       document.getElementById('seccion-baladas').style.display = (id === 'baladas') ? 'block' : 'none';
       document.getElementById('seccion-software').style.display = (id === 'software') ? 'block' : 'none';
       document.getElementById('seccion-djs').style.display = (id === 'djs') ? 'block' : 'none';
+      document.getElementById('seccion-colecciones').style.display = (id === 'colecciones') ? 'block' : 'none';
 
       document.getElementById('btn-nav-baladas').classList.toggle('active', id === 'baladas');
       document.getElementById('btn-nav-software').classList.toggle('active', id === 'software');
       document.getElementById('btn-nav-djs').classList.toggle('active', id === 'djs');
+      document.getElementById('btn-nav-colecciones').classList.toggle('active', id === 'colecciones');
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -1432,12 +1702,15 @@
       const sBaladas = document.getElementById('select-baladas');
       const sSoftware = document.getElementById('select-software');
       const sDjs = document.getElementById('select-djs');
+      const sColecciones = document.getElementById('select-colecciones');
 
       if (sBaladas) sBaladas.value = val;
       if (sSoftware) sSoftware.value = val;
       if (sDjs) sDjs.value = val;
+      if (sColecciones) sColecciones.value = val;
 
       actualizarPrecios();
+      renderColeccionesCatalog();
     }
 
     function actualizarPrecios() {
@@ -1558,6 +1831,56 @@
       container.innerHTML = html;
     }
 
+    function renderColeccionesCatalog() {
+      const grid = document.getElementById('coleccionesGrid');
+      if (!grid) return;
+
+      const data = countryMasterData[currentSelectedCountry] || countryMasterData.AR;
+      const searchInput = document.getElementById('searchInputColecciones');
+      const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+      const filtrados = COLECCIONES_DATA.filter(p => 
+        p.title.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query)
+      );
+
+      let html = '';
+      filtrados.forEach(p => {
+        const itemType = p.isVip ? 'colec_vip' : 'colec_regular';
+        const precioTexto = p.isVip ? data.colecVipText : data.colecRegularText;
+
+        html += `
+          <div class="colec-card ${p.isVip ? 'vip' : ''}">
+            <div class="colec-img-box">
+              ${p.isVip ? '<span class="colec-vip-tag">⭐ Pack Especial</span>' : ''}
+              <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/280x240/060913/00f0ff?text=DJ+Pack'" />
+            </div>
+            <div class="dj-card-body">
+              <h3>${p.title}</h3>
+              <p>${p.desc}</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto; margin-bottom:12px; font-weight:800; border-top: 1px solid rgba(255,255,255,0.1); padding-top:10px;">
+                <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Precio (${data.currencyCode}):</span>
+                <span style="color:${p.isVip ? '#ffb703' : 'var(--primary-dj)'}; font-size:1.25rem;">${precioTexto}</span>
+              </div>
+              <div class="card-actions-flex">
+                <a href="https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(`¡Hola! 👋 Me interesa comprar el *Pack ${p.title}* (${precioTexto}) de la sección Colecciones Exclusivas desde *${data.country}* ${data.flag}. ¿Cuáles son los medios de pago?`)}" class="btn-buy" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-whatsapp"></i> Comprar
+                </a>
+                <button type="button" class="btn-add-cart-global" onclick="agregarAlCarrito('${p.title}', '${itemType}')" title="Añadir al Carrito">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      if (filtrados.length === 0) {
+        html = '<p style="grid-column: 1 / -1; text-align:center; color:var(--text-muted); padding:30px;">No se encontraron packs que coincidan con la búsqueda.</p>';
+      }
+
+      grid.innerHTML = html;
+    }
+
     function abrirModalPack(packId) {
       const pack = extraPacks.find(p => p.id === packId);
       if (!pack) return;
@@ -1589,7 +1912,7 @@
     }
 
     // ==========================================
-    // SISTEMA DE CARRITO MULTISECCIÓN DINÁMICO
+    // SISTEMA DE CARRITO MULTISECCIÓN GLOBAL
     // ==========================================
     function toggleCartModal() {
       document.getElementById('cartModal').classList.toggle('active');
@@ -1617,6 +1940,8 @@
       if (tipo === 'software') return data.softText;
       if (tipo === 'dj_single') return data.djSingleText;
       if (tipo === 'dj_promo') return data.djPromoText.replace("Los 12 Packs por ", "");
+      if (tipo === 'colec_regular') return data.colecRegularText;
+      if (tipo === 'colec_vip') return data.colecVipText;
       return data.djSingleText;
     }
 
@@ -1706,6 +2031,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       renderExtraPacks();
+      renderColeccionesCatalog();
       actualizarPrecios();
     });
   </script>
